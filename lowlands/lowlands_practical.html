@@ -1,0 +1,1124 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.2. WALRUS practical &#8212; Course material Catchment and Climate hydrology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lowlands/lowlands_practical';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Introduction to recession" href="../recession/recession_intro.html" />
+    <link rel="prev" title="2.1. Catchment and climate hydrology" href="lowlands_slides.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Course material Catchment and Climate hydrology</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../iceland%20excursion/iceland%20excursion_intro.html">1. Introduction Iceland excursion</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="lowlands_intro.html">2. Introduction to Lowlands</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lowlands_slides.html">2.1. Catchment and climate hydrology</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. WALRUS practical</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../recession/recession_intro.html">3. Introduction to recession</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recession/recession_slides.html">3.2. Recession-based modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recession/recession_practical.html">3.3. Recession-based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../snow%20ice/snow%20ice_intro.html">4. Introduction to Snow Ice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_slides.html">4.1. Snow and glaciers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_practical.html">4.2. Hydrologiska Byråns Vattenbalansavdelning model (HBV) in Iceland</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../soil%20moisture/soil%20moisture_intro.html">5. Introduction to Soil Moisture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_slides.html">5.1. Climate and the local water balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_practical.html">5.2. Climate and the local water balance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../topography/topography_intro.html">6. Introduction to Topography</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_slides.html">6.2. Topography-based modeling: TOPMODEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_practical.html">6.3. Topography based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../synthesis%20assignment/synthesis%20assignment_intro.html">7. Introduction Synthesis assignment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lowlands/lowlands_practical.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>WALRUS practical</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-walrus">2.2.2. Run WALRUS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-packages">2.2.2.1. Install packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-script">2.2.2.2. Base script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">2.2.2.3. Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding">2.2.2.4. Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-source-files">2.2.2.5. Change source files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">2.2.3. Case studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-berkel">2.2.3.1. Flood - Berkel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-level-management-polder-cabauw">2.2.3.2. Water level management - Polder Cabauw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upward-seepage-polder-oude-riet">2.2.3.3. Upward seepage - Polder Oude Riet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snow-reusel">2.2.3.4. Snow - Reusel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-discharge-relation-hupsel-brook-catchment">2.2.3.5. Stage-discharge relation – Hupsel Brook catchment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibration">2.2.4. Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-calibration">2.2.4.1. Manual calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-calibration">2.2.4.2. Automatic calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-parameter-space">2.2.4.3. Sampling the parameter space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">2.2.5. Final assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">2.2.6. References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="walrus-practical">
+<h1><span class="section-number">2.2. </span>WALRUS practical<a class="headerlink" href="#walrus-practical" title="Permalink to this heading">#</a></h1>
+<p><strong>(Wageningen Lowland Runoff Simulator)</strong> </br>
+<strong>PC practical Catchment and Climate Hydrology</strong></p>
+<p><em>Note that the answers for this practical can be found <a class="reference download internal" download="" href="../_downloads/634595c4aa66c4c3d6d6690110c411c3/lowlands_scripts_with_answers.zip"><span class="xref download myst">here</span></a>.</em></p>
+<section id="introduction">
+<h2><span class="section-number">2.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>This practical consists of four parts:</p>
+<ul class="simple">
+<li><p><strong>10:00</strong>    Learn how to run WALRUS, look into the model structure and get a
+feel for the effect of parameter values.</p></li>
+<li><p><strong>10:45</strong>    Perform some case studies to experience how WALRUS can be used in
+practice.</p></li>
+<li><p><strong>11:45</strong>    Apply several techniques to obtain optimal parameter values for a
+specific catchment.</p></li>
+<li><p><strong>12:30</strong>    Predict a flood peak in the Bakelse Aa catchment using your
+calibrated model (the final assignment).</p></li>
+</ul>
+<p>You don’t have to do all exercises, but make sure you start with the
+four parts at approximately the appointed time. For every
+section/exercise there are separate scripts in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> folder.</p>
+</section>
+<section id="run-walrus">
+<h2><span class="section-number">2.2.2. </span>Run WALRUS<a class="headerlink" href="#run-walrus" title="Permalink to this heading">#</a></h2>
+<section id="install-packages">
+<h3><span class="section-number">2.2.2.1. </span>Install packages<a class="headerlink" href="#install-packages" title="Permalink to this heading">#</a></h3>
+<p>Before you can run WALRUS, you should install the <a class="reference download internal" download="" href="../_downloads/5434d7efc90cad8475fded10d3409261/lowlands_WALRUS4.zip"><span class="xref download myst">WALRUS-package</span></a> and the packages it requires. Open the script <code class="docutils literal notranslate"><span class="pre">install_WALRUS_packages.R</span></code> from the folder <code class="docutils literal notranslate"><span class="pre">scripts</span></code> in RStudio and run everything (for example by
+pressing <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+S</span></code>). Make sure you don’t get errors. Warnings are no problem.</p>
+</section>
+<section id="base-script">
+<h3><span class="section-number">2.2.2.2. </span>Base script<a class="headerlink" href="#base-script" title="Permalink to this heading">#</a></h3>
+<p>First you will run WALRUS in a basic application. Open the script
+<code class="docutils literal notranslate"><span class="pre">basic_example.R</span></code> in RStudio. This script is also discussed in Sec. 6.1
+of the user manual [&#64;WALRUSmanual provided in the documentation-folder].
+Go through the script line by line, read the comments and look what
+happens.</p>
+<p>First, packages are loaded and data are read. In l. 30 you make the data
+suitable for the model using a special WALRUS-function. In the
+background, the time series are transformed into functions for
+cumulative rainfall, evapotranspiration, etc., which are necessary for
+the flexible time step approach. If you want to run WALRUS with a larger
+time step than the original data, you can increase <code class="docutils literal notranslate"><span class="pre">dt</span></code> (for example
+<code class="docutils literal notranslate"><span class="pre">dt=24</span></code> if you have hourly data and want to run WALRUS with a daily
+resolution).</p>
+<p>In l. 39–40 you give values for all parameters and catchment
+characteristics. You can supply initial values for states (i.e.
+groundwater depth – <code class="docutils literal notranslate"><span class="pre">dG0</span></code>, storage deficit – <code class="docutils literal notranslate"><span class="pre">dV0</span></code>, water level in the
+quickflow reservoir – <code class="docutils literal notranslate"><span class="pre">hQ0</span></code> and/or surface water level – <code class="docutils literal notranslate"><span class="pre">hS0</span></code>), but
+are not obliged to (see Sec. 6.3 in the manual for all options).</p>
+<p>In l. 48 the model is finally run. This can take a while, depending on
+the length of the modelled period, the step size and parameter values
+(one year with hourly values takes about 20 sec.). The name you give to
+a run (l. 56) is used to write data files and figures to file (l. 59).</p>
+</section>
+<section id="output">
+<h3><span class="section-number">2.2.2.3. </span>Output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h3>
+<p>During postprocessing, figures are made, the water budget is computed
+and files with model output are made. On the screen, the water balance
+(bottom left) and figures appear (bottom right). Look in the folders
+<code class="docutils literal notranslate"><span class="pre">output</span></code> and <code class="docutils literal notranslate"><span class="pre">figures</span></code> and open the exported files to see how they are
+set up (see Sec. 6.1 in the manual for explanation about the files).</p>
+<p>You can also use the output without postprocessing. This is especially
+useful during automatic calibration
+(Sec. <a class="reference internal" href="#sec:kal"><span class="xref myst">4</span></a>{reference-type=”ref” reference=”sec:kal”}), when you
+don’t want to lose time making figures of intermediate results. Finally,
+you can use the output as input for another model (e.g. a hydrodynamic
+model such as SOBEK).</p>
+<p>To run WALRUS with data from another catchment, with another period of
+with other parameters, you can change the belonging line in the script.
+After that, you have to run WALRUS again of course (l. 48). Change the
+name of the run (l. 56) and/or save the script with another name.</p>
+</section>
+<section id="understanding">
+<h3><span class="section-number">2.2.2.4. </span>Understanding<a class="headerlink" href="#understanding" title="Permalink to this heading">#</a></h3>
+<p>In this basic example, the Hupsel Brook catchment, some parameter values
+and a period of two months are selected. Look at what is plotted in the
+four panels (see Table 1 and the equations in [&#64;Brauer2014a] for an
+overview of model variables and symbols). To get a first idea of the effect of parameter values, you can change them and look at the change in the plots of the time series. Also explain the changes with the model structure and equations. See the excersies below.</p>
+<div class="exercise admonition" id="lowlands_q1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
+<section id="exercise-content">
+<p>Set <span class="math notranslate nohighlight">\(c_\mathrm{Q}\)</span> to 10 and later to 100 h (lines 39–40). </br>
+What happens to the shape of the discharge peaks? Explain this with equation 8 in [&#64;Brauer2014a] and/or Figure 2.7 in the user manual (provided in the documentation subfolder).</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q1"><span class="std std-numref">Exercise 2.1</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Low values of <span class="math notranslate nohighlight">\(c_Q\)</span> lead to sharp peaks. <span class="math notranslate nohighlight">\(c_Q\)</span> is a linear reservoir constant (<span class="math notranslate nohighlight">\(f_QS\)</span> = <span class="math notranslate nohighlight">\(h_Q\)</span>/<span class="math notranslate nohighlight">\(c_Q\)</span>), so the quickflow reservoir empties quickly if <span class="math notranslate nohighlight">\(c_Q\)</span> is small.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<section id="exercise-content">
+<p>Set <span class="math notranslate nohighlight">\(c_\mathrm{W}\)</span> to 100 and later to 200 mm. </br>
+What happens to the wetness index (<span class="math notranslate nohighlight">\(W\)</span>; the divider between slow and fast flow routes), the groundwater level and the discharge time series? Explain this with equation 1 and/or Fig. 2.2 in the user manual.</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q2"><span class="std std-numref">Exercise 2.2</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(c_W\)</span> is small, <span class="math notranslate nohighlight">\(W\)</span> becomes zero at relatively low values of <span class="math notranslate nohighlight">\(d_V\)</span>, meaning that no rain will be led to the quickflow reservoir when the soil is still quite wet. With a small <span class="math notranslate nohighlight">\(c_W\)</span>, the discharge peaks are dampened (no contribution of quickflow), but the baseflow will increase. With a high <span class="math notranslate nohighlight">\(c_W\)</span>, discharge peaks are too high and sharp, but baseflow will decrease (no replenishing).</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<section id="exercise-content">
+<p>Set <span class="math notranslate nohighlight">\(c_\mathrm{G}\)</span> to <span class="math notranslate nohighlight">\(1\times 10^6\)</span> and later to <span class="math notranslate nohighlight">\(100\times 10^6\)</span> mm h. </br>
+What happens to the baseflow (discharge a long time after rainfall events), the groundwater level and groundwater drainage(<span class="math notranslate nohighlight">\(f_\mathrm{GS}\)</span>)? Explain this with equation 7 and/or Fig. 2.6 in the user manual.</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q3"><span class="std std-numref">Exercise 2.3</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A high <span class="math notranslate nohighlight">\(c_G\)</span> leads to less baseflow (<span class="math notranslate nohighlight">\(f_GS\)</span>) at the same groundwater and surface water level, discharge drops farther after peaks and due to the small <span class="math notranslate nohighlight">\(f_GS\)</span>, the groundwater level rises more due to rainfall input than it drops due to drainage.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
+<section id="exercise-content">
+<p>Set <span class="math notranslate nohighlight">\(c_\mathrm{S}\)</span> to 0.5 and later to 10. </br>
+What happens to the variation in the surface water level and groundwater drainage? Explain this with equation 9.</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q4"><span class="std std-numref">Exercise 2.4</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(c_S\)</span> denotes the bankfull discharge (discharge when the surface water level is at soil surface). A large <span class="math notranslate nohighlight">\(c_S\)</span> means that the channels can transport a lot of water, so a very large channel. To get the same change in discharge, less change in surface water level is needed in that case.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<section id="exercise-content">
+<p>Set <span class="math notranslate nohighlight">\(c_\mathrm{D}\)</span> to 500 and later to 2500 mm. </br>
+What happens to the groundwater level, wetness index and the difference between potential and actual evapotranspiration (choose a summer period)?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q5"><span class="std std-numref">Exercise 2.5</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">When channels are deep (large <span class="math notranslate nohighlight">\(c_D\)</span>), groundwater has to become deeper to get the same drainage flux. When groundwater is deep, the top soil is dry. When the top soil is dry, evapotranspiration is reduced.</p>
+</div>
+</details></section>
+<section id="change-source-files">
+<h3><span class="section-number">2.2.2.5. </span>Change source files<a class="headerlink" href="#change-source-files" title="Permalink to this heading">#</a></h3>
+<p>WALRUS is completely open source (under the GNU General Public Licence
+v3). This means that you can see and change all model code. However, it
+is important that, if you change model equations, you mention clearly
+what has been changed with regard to the original code to avoid
+confusion.</p>
+<p>The scripts that are combined into the package are given in the folder
+<code class="docutils literal notranslate"><span class="pre">source_files</span></code> [or in de folder <code class="docutils literal notranslate"><span class="pre">R</span></code> on the GitHub &#64;WALRUS_GitHub]. You
+can open these scripts in R. The core of the code consists of two
+scripts: <code class="docutils literal notranslate"><span class="pre">WALRUS_loop.R</span></code> contains a loop which calls the script
+<code class="docutils literal notranslate"><span class="pre">WALRUS_step.R</span></code> (which contains the model equations) during every time
+step (with flexible size). Open the <code class="docutils literal notranslate"><span class="pre">step</span></code>-script to see how the
+equations from Table 1 in [&#64;Brauer2014a] are converted into code.</p>
+<p><strong>BONUS</strong> You can also change a function. Change the colour of one of
+the curves. Open the <code class="docutils literal notranslate"><span class="pre">figures</span></code>-script, rename the function (for
+example <code class="docutils literal notranslate"><span class="pre">WALRUS_figures2</span></code>), change a colour and run the function (or the
+whole script: <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+S</span></code>). You also have to change the
+<code class="docutils literal notranslate"><span class="pre">postprocessing</span></code>-script in this way, to make sure that it calls the new
+function. It is possible that you need to load another package called
+<code class="docutils literal notranslate"><span class="pre">zoo</span></code>.\</p>
+</section>
+</section>
+<section id="case-studies">
+<h2><span class="section-number">2.2.3. </span>Case studies<a class="headerlink" href="#case-studies" title="Permalink to this heading">#</a></h2>
+<p>Try some of the case studies below (you don’t have to do all), but make
+sure you start with Section <a class="reference internal" href="#sec:kal"><span class="xref myst">4</span></a>{reference-type=”ref”
+reference=”sec:kal”} no later than 11:45. There is an adapted version of
+the base script for each case study (mostly preprogrammed, but sometimes
+you have to change existing code).</p>
+<section id="flood-berkel">
+<h3><span class="section-number">2.2.3.1. </span>Flood - Berkel<a class="headerlink" href="#flood-berkel" title="Permalink to this heading">#</a></h3>
+<p>The Berkel contains several discharge observation points in a row,
+leading to a chain of nested catchments [&#64;Cluitmans2014; &#64;TenBroek2014].
+In this case study, you will use the area between Lutum and Stadtlohn
+(catchment area
+<span class="math notranslate nohighlight">\(A\)</span> = <span class="math notranslate nohighlight">\(A_\mathrm{Stadtlohn}-A_\mathrm{Lutum}\)</span> = 231 <span class="math notranslate nohighlight">\(-\)</span> 38 = 193 km<span class="math notranslate nohighlight">\(^2\)</span>).
+The discharge measured in Lutum is used in WALRUS as surface water
+supply (<span class="math notranslate nohighlight">\(f_\mathrm{XS}\)</span>). To do this, this discharge (in m<span class="math notranslate nohighlight">\(^3\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>)
+is converted to mm h<span class="math notranslate nohighlight">\(^{-1}\)</span> by dividing by the catchment area (so the
+193 km<span class="math notranslate nohighlight">\(^2\)</span>), similar to the conversion for discharge (<span class="math notranslate nohighlight">\(Q\)</span>). In other
+words, the water flowing into the catchment is divided over the whole
+catchment.</p>
+<p>On 27 Augustus 2010 a series of storms passed over the Netherlands and
+Germany, leading to floods in many brooks and rivers (including the
+Hupsel Brook). The upstream part of the Berkel has also received much
+precipitation. Run the script and zoom in on the rainfall event
+(starting on 1 August). To investigate what would have happened if the
+catchment had been wetter initially, run the model with different
+initial groundwater depths <code class="docutils literal notranslate"><span class="pre">dG0</span></code>. See <a class="reference internal" href="#fig-6sites"><span class="std std-numref">Fig. 2.1</span></a> below.</p>
+<figure class="align-center" id="fig-6sites">
+<a class="reference internal image-reference" href="../_images/WALRUS_6_test_sites.png"><img alt="../_images/WALRUS_6_test_sites.png" src="../_images/WALRUS_6_test_sites.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">WALRUS 6 test sites.</span><a class="headerlink" href="#fig-6sites" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="exercise admonition" id="lowlands_q6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<section id="exercise-content">
+<p>Give the peak discharge resulting from three initial groundwater depths
+(on 1 August).<br />
+<span class="math notranslate nohighlight">\(d_\mathrm{G,0}\)</span> = 2400 mm: <span class="math notranslate nohighlight">\(d_\mathrm{G,0}\)</span> = 2000 mm:
+<span class="math notranslate nohighlight">\(d_\mathrm{G,0}\)</span> = 1500 mm: Look also at the contribution of the
+upstream part in the lower panel (blue dashed). What happens to the
+timing and shape of the discharge peak between Lutum and Stadtlohn for
+<span class="math notranslate nohighlight">\(d_{G,0}=2400\)</span>?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q6"><span class="std std-numref">Exercise 2.6</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The discharge peak is dampened and delayed.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q7">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
+<section id="exercise-content">
+<p><strong>BONUS</strong> You can also change the initial values of the other state
+variables by setting <code class="docutils literal notranslate"><span class="pre">hQ0</span></code>, <code class="docutils literal notranslate"><span class="pre">hS0</span></code> and/or <code class="docutils literal notranslate"><span class="pre">dV0</span></code>. What happens if you
+increase <code class="docutils literal notranslate"><span class="pre">hS0</span></code>?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q7"><span class="std std-numref">Exercise 2.7</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The initial surface water level and discharge are higher and subsequent discharge peaks are higher as well.</p>
+</div>
+</details></section>
+<section id="water-level-management-polder-cabauw">
+<h3><span class="section-number">2.2.3.2. </span>Water level management - Polder Cabauw<a class="headerlink" href="#water-level-management-polder-cabauw" title="Permalink to this heading">#</a></h3>
+<p>The surface water level in Cabauw is managed by supplying water upstream
+and changing weir levels. Run the whole script to look at the output of
+one year. The dashed blue line in the bottom panel is the surface water
+supply.</p>
+<p>Look in the file with forcing data how information on the changes in
+weir level is communicated to the model.</p>
+<div class="exercise admonition" id="lowlands_q8">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.8 </span></p>
+<section id="exercise-content">
+<p>What does the column <span class="math notranslate nohighlight">\(hSmin\)</span> signify?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q8"><span class="std std-numref">Exercise 2.8</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Column <span class="math notranslate nohighlight">\(hSmin\)</span> gives the distance between the channel bottom and weir level for each time step. The Q-h-relation (l. 39–51) uses that threshold in the discharge computation. You can also use this threshold to account for “dead storage” in a water course (standing water; there is water in the channel, but no discharge).</p>
+</div>
+</details><p>Between 16 Nov. 2007 and 6 May 2008 the weir at the outlet was set to
+its winter level. Zoom in to this period by adjusting the start and end
+date and run the model again. It is probably necessary to change the
+initial groundwater level (<code class="docutils literal notranslate"><span class="pre">dG0</span></code>).</p>
+<div class="exercise admonition" id="lowlands_q9">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.9 </span></p>
+<section id="exercise-content">
+<p>What causes discharge peaks in winter? And in summer?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q9"><span class="std std-numref">Exercise 2.9</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In summer, discharge mostly responds to changes in surface water supply, while in winter discharge responds to rainfall.</p>
+</div>
+</details><p>You can also use a conceptual rainfall-runoff model like WALRUS for
+scenario analyses. For example, you could ask the question “what will
+happen to discharge and groundwater level when the supplied water volume
+would double or when the supply would be stopped?”.</p>
+<p>Make a copy of the forcing data frame, multiply the <code class="docutils literal notranslate"><span class="pre">fXS</span></code>-column by two
+and zero and save it with different names. Run the model with the
+different forcing and save the output with different names. For easy
+comparison, open all three written pdf figures, make them fullscreen and
+jump with <code class="docutils literal notranslate"><span class="pre">ALT+TAB</span></code> between the figures.</p>
+<div class="exercise admonition" id="lowlands_q10">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.10 </span></p>
+<section id="exercise-content">
+<p>How do discharge, groundwater level or one of the other model variables
+change between the scenarios?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q10"><span class="std std-numref">Exercise 2.10</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Discharge is directly influenced by <span class="math notranslate nohighlight">\(f_{XS}\)</span>. The influence on groundwater level is less clear and depends on the parameter <span class="math notranslate nohighlight">\(c_G\)</span>. If <span class="math notranslate nohighlight">\(c_G\)</span> is very large (as is the case in Cabauw), the groundwater level responds very slowly to changes in surface water level.</p>
+</div>
+</details></section>
+<section id="upward-seepage-polder-oude-riet">
+<h3><span class="section-number">2.2.3.3. </span>Upward seepage - Polder Oude Riet<a class="headerlink" href="#upward-seepage-polder-oude-riet" title="Permalink to this heading">#</a></h3>
+<p>Upward seepage is an unknown term in many catchments, and increased by
+(naturally or anthropogenic) rise of levels outside the catchment. In
+the polder Oude Riet, seepage is a non-negligable term in the water
+budget.</p>
+<p>Note that the Oude Riet data are daily sums. In the Oude Riet polder,
+water is discharged by a pumping station, which causes the hourly
+discharge time series to be irregular, making it difficult to see the
+signal through the noise. For the base scenario, assume a fixed seepage
+flux. Estimate the seepage flux by closing the water budget (assuming no
+evapotranspiration reduction and storage change over the year). Add the
+seepage flux (in mm d<span class="math notranslate nohighlight">\(^{-1}\)</span>) to the forcing data frame in R. Compute
+two scenarios: without seepage and with twice as much seepage and
+compare these to the base scenario (jump between pdfs).</p>
+<div class="exercise admonition" id="lowlands_q11">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.11 </span></p>
+<section id="exercise-content">
+<p>What happens to the groundwater level and discharge when you increase or
+decrease the seepage flux?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q11"><span class="std std-numref">Exercise 2.11</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The soil becomes wetter (smaller <span class="math notranslate nohighlight">\(c_V\)</span>), evapotranspiration is less reduced and more water is led to the quickflow reservoir.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q12">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.12 </span></p>
+<section id="exercise-content">
+<p><strong>BONUS</strong> Compare the effect of upward seepage (<span class="math notranslate nohighlight">\(f_\mathrm{XG}\)</span>) to
+surface water supply (<span class="math notranslate nohighlight">\(f_\mathrm{XS}\)</span>)? In other words, run the model
+twice with the same inflow rate, but into different reservoirs.</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q12"><span class="std std-numref">Exercise 2.12</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Groundwater levels increase directly when <span class="math notranslate nohighlight">\(f_{XG}\)</span> is increased, but there is a delay between change in <span class="math notranslate nohighlight">\(f_{XS}\)</span> and groundwater level. Discharge responds more quickly to change in <span class="math notranslate nohighlight">\(f_{XS}\)</span> than change in <span class="math notranslate nohighlight">\(f_{XG}\)</span>.</p>
+</div>
+</details></section>
+<section id="snow-reusel">
+<h3><span class="section-number">2.2.3.4. </span>Snow - Reusel<a class="headerlink" href="#snow-reusel" title="Permalink to this heading">#</a></h3>
+<p>Snow is often neglected in the Netherlands, but snow accumulation and
+melt occur nearly every year and can lead to high discharges, especially
+in combination with rainfall. Here, you investigate the effect of the
+snow module [&#64;Wendt2015] in the Reusel catchment [calibrated by
+&#64;Loos2015a].</p>
+<p>Call the <code class="docutils literal notranslate"><span class="pre">WALRUS_snow</span></code>-function before the regular
+<code class="docutils literal notranslate"><span class="pre">preprocessing</span></code>-function to compute snow accumulation and melt, first
+using the degree hour factor method and later using the shortwave
+radiation factor method. Look in the help-function to see which
+arguments this function requires and what output it gives. Because the
+precipitation time series to be used as input for WALRUS has changed,
+you need to execute the preprocessing step again. Compute and plot three
+hydrographs (without snow module and with the two methods) in one
+figure. You can also compare the three saved pdf files.</p>
+<div class="exercise admonition" id="lowlands_q13">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.13 </span></p>
+<section id="exercise-content">
+<p>Which method performs best in your opinion? Why?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q13"><span class="std std-numref">Exercise 2.13</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The radiation factor method causes the best timing of the discharge peak.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q14">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.14 </span></p>
+<section id="exercise-content">
+<p>Would you recommend a snow module, and if so, which one?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q14"><span class="std std-numref">Exercise 2.14</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In this case a snow module is helpful, but the radiation factor method does not perform much better than the degree hour method. The DHF method is to be preferred in most cases, because less data is needed.</p>
+</div>
+</details></section>
+<section id="stage-discharge-relation-hupsel-brook-catchment">
+<h3><span class="section-number">2.2.3.5. </span>Stage-discharge relation – Hupsel Brook catchment<a class="headerlink" href="#stage-discharge-relation-hupsel-brook-catchment" title="Permalink to this heading">#</a></h3>
+<p>In some catchments, the <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation of the outlet is known. At the
+outlet of the Hupsel Brook, for example, there is a well-calibrated
+flume. You can use the rating curve belonging to this flume in stead of
+the default <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation, which reduces the degree of freedom during
+calibration. It is possible, however, that the <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation at the
+outlet is not representative for the whole catchment.</p>
+<p>The stage-discharge relation for the Hupsel Brook is programmed in the
+script as a function (l. 39–54). The function requires the water level
+in mm as input and returns the discharge in mm h<span class="math notranslate nohighlight">\(^{-1}\)</span> as answer (in
+WALRUS, everything is computed per unit of area). For flood situations,
+the rating curve is extrapolated above the weir.</p>
+<p>To use this relation in WALRUS, run l. 57 (if you want, you can check in
+l. 60 and 63 if it’s implemented correctly) and use the same lines as
+the base script (parameter <code class="docutils literal notranslate"><span class="pre">cS</span></code> is not used now). Also run the last
+lines of the script to see the differences between the
+<span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relations.</p>
+<div class="exercise admonition" id="lowlands_q15">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.15 </span></p>
+<section id="exercise-content">
+<p>Compare the figure written to file to the one from the base script to
+see the effect of the rating curve. What happens to the shape of the
+discharge peaks?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q15"><span class="std std-numref">Exercise 2.15</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The discharge remains more or less similar, because that is mostly influenced by the inflow to the channel (groundwater drainage and quickflow.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q16">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.16 </span></p>
+<section id="exercise-content">
+<p>What happens to the dynamics of the surface water level?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q16"><span class="std std-numref">Exercise 2.16</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For the same discharge, the water level needs to rise higher with the rating curve than with the default relation, causing larger fluctuations in surface water level and higher groundwater levels. You can of course change parameter <span class="math notranslate nohighlight">\(cS\)</span> (the bankfull discharge– the discontinuity in the graph) to get a similar curve..</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q17">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.17 </span></p>
+<section id="exercise-content">
+<p>What happens to the distance between surface water level and groundwater level and what is the effect of this on groundwater drainage?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q17"><span class="std std-numref">Exercise 2.17</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">When surface water levels fluctuate more, the distance between surface water and groundwater becomes smaller during peak flows (surface water may even rise above the groundwater level), thereby limiting drainage (or even causing infiltration) and reducing flood peaks.</p>
+</div>
+</details></section>
+</section>
+<section id="calibration">
+<h2><span class="section-number">2.2.4. </span>Calibration<a class="headerlink" href="#calibration" title="Permalink to this heading">#</a></h2>
+<p>As you have seen, the influence of parameter values on model performance
+is very large. For a realistic model run, it is essential that the
+chosen parameter values are suitable for the catchment in question.
+Unfortunately, it is not easy to find those parameter values. For this
+exercise you will search for good parameter values for the catchment of
+the Bakelse Aa [&#64;Slenters2014]. Scripts are available for guidance.</p>
+<p>You will also use this catchment also for the final assignment. Make
+sure you start with the final assignment no later than 12:30.</p>
+<section id="manual-calibration">
+<h3><span class="section-number">2.2.4.1. </span>Manual calibration<a class="headerlink" href="#manual-calibration" title="Permalink to this heading">#</a></h3>
+<p>The most straightforward calibration method is manually. For the
+calibration procedure, you perform the following steps several times:
+adjust parameter values (l. 39–40), run (l. 48), and evaluate the
+output (l. 59). You do this until you are satisfied with the results.
+With some feeling for parameter values and by looking at time series of
+all model variables, you can steer WALRUS in the right direction.
+Sec. 7.1 of the WALRUS manual contains tips for calibration, attention
+points to and solutions for several problems. Which values did you find
+for:<br />
+<code class="docutils literal notranslate"><span class="pre">cW</span></code>: <code class="docutils literal notranslate"><span class="pre">cG</span></code>: <code class="docutils literal notranslate"><span class="pre">cQ</span></code>: You can also change the soil type (<code class="docutils literal notranslate"><span class="pre">st</span></code>), channel
+depth (<code class="docutils literal notranslate"><span class="pre">cD</span></code>), fraction suface water (<code class="docutils literal notranslate"><span class="pre">aS</span></code>) or bankful discharge (<code class="docutils literal notranslate"><span class="pre">cS</span></code>).
+Usually, you base these values on catchment characterstics, but these
+estimates are uncertain. The model is usually not very sentitive to
+parameter <code class="docutils literal notranslate"><span class="pre">cV</span></code>, so this parameter is fixed here.</p>
+</section>
+<section id="automatic-calibration">
+<h3><span class="section-number">2.2.4.2. </span>Automatic calibration<a class="headerlink" href="#automatic-calibration" title="Permalink to this heading">#</a></h3>
+<p>Calibration can also be automated. There are many different calibration
+algorithms, often implemented in R packages. As an example, you use the
+relatively simple method of Levenberg-Marquardt here.</p>
+<p>Due to the limited time available during this practical, the chosen
+period is short and the period and the temporal resolution low. An
+additional preprocessing step (l. 32) produces a vector with observed
+discharges (<code class="docutils literal notranslate"><span class="pre">Qobs_forNS</span></code>), to which the modelled discharge will be
+compared.</p>
+<p>Provide initial values (where the calibration algorithm will start
+“walking” in the parameter space) and boundaries of realistic values for
+every parameter you want to calibrate (l. 44–46). Normalise the
+parameter values (with the values from l. 49), because it is beneficial
+for the calibration algorithm when all parameter values are in the same
+order of magnitude.</p>
+<p>A function has been built around the <code class="docutils literal notranslate"><span class="pre">WALRUS_loop</span></code> function (l. 53–60),
+for which the input is a parameter set (a vector, so not a data frame)
+and the output is a vector with residuals
+(<span class="math notranslate nohighlight">\(Q_\mathrm{obs}-Q_\mathrm{mod}\)</span>). The sum of squares of these residuals
+is minimized during calibration. Test whether the starting values are
+realistic first (l. 63–76), because most calibration techniques
+(including the Levenberg-Marquardt algorithm) are sensitive to these
+starting values.</p>
+<p>Calling the function <code class="docutils literal notranslate"><span class="pre">nls.lm</span></code> starts the calibration with starting and
+end values, the adjusted model function and additional arguments for the
+calibration process (the maximum number of iterations is very low here).
+Calibrate WALRUS, retrieve the resulting parameter values (l. 87–93)
+and run the model once more with these values to save the results.</p>
+<p>Which values did you find for:<br />
+<code class="docutils literal notranslate"><span class="pre">cW</span></code>: <code class="docutils literal notranslate"><span class="pre">cG</span></code>: <code class="docutils literal notranslate"><span class="pre">cQ</span></code>: If time allows, try starting with different values,
+using another period and/or another time step to assess the sensitivity
+of the found parameter values to the choices you made during
+calibration. Which other values did you find?<br />
+<code class="docutils literal notranslate"><span class="pre">cW</span></code>: <code class="docutils literal notranslate"><span class="pre">cG</span></code>: <code class="docutils literal notranslate"><span class="pre">cQ</span></code>:</p>
+</section>
+<section id="sampling-the-parameter-space">
+<h3><span class="section-number">2.2.4.3. </span>Sampling the parameter space<a class="headerlink" href="#sampling-the-parameter-space" title="Permalink to this heading">#</a></h3>
+<p>A third option is to run the model with a large number of parameter
+sets. These parameters can be drawn randomly within a certain range
+(Monte Carlo) or sampled more cleverly to save computational time
+(e.g. Latin Hypercube Sampling). WALRUS has been run with 1000 random
+parameter sets for the Bakelse Aa catchment, using one year and hourly
+resolution. The code is provided in l. 39–68 (now commented). Because
+running this part takes quite long (5 hours on a regular pc), the result
+is provided. Open the file <code class="docutils literal notranslate"><span class="pre">pars_MC_BakelseAa.dat</span></code> from the
+<code class="docutils literal notranslate"><span class="pre">output</span></code>-folder in Notepad to look at the structure.</p>
+<p>Load this file in R (l. 75) and make dotty plots (l. 78–90). The dotty
+plots show how the model performance (in this case expressed as the sum
+of squares of the discharge residuals or the Kling-Gupta Efficiency)
+depends on the parameter values.</p>
+<div class="exercise admonition" id="lowlands_q18">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.18 </span></p>
+<section id="exercise-content">
+<p>For which parameter(s) can you point out a range of good parameter values based on the sum of squares. And based on the Kling-Gupta Efficiency?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q18"><span class="std std-numref">Exercise 2.18</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A minimum can clearly be seen for <span class="math notranslate nohighlight">\(c_G\)</span>, but this is less clear for the other parameter values.</p>
+</div>
+</details><div class="exercise admonition" id="lowlands_q19">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.19 </span></p>
+<section id="exercise-content">
+<p>What can you learn about equifinality from the dotty plot?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q19"><span class="std std-numref">Exercise 2.19</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If there is no clear optimum, good results can be obtained with different combinations of parameters.</p>
+</div>
+</details><p>Select from these 1000 parameter sets the best 10 (the sum of squares
+(<code class="docutils literal notranslate"><span class="pre">SS</span></code>) is below the 0.1<span class="math notranslate nohighlight">\(^\mathsf{th}\)</span> percentile; l. 87) and save
+(l. 90). Run WALRUS with these 10 parameter sets, save the modelled
+discharge in a collection matrix (l. 97–119) and plot this
+(l. 126-136). The spread of the blue lines gives an indication of the
+uncertainty in the modelled discharge caused by uncertainty in parameter
+values.</p>
+<div class="exercise admonition" id="lowlands_q20">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.20 </span></p>
+<section id="exercise-content">
+<p>When is the parameter uncertainty large?</p>
+</section>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q20"><span class="std std-numref">Exercise 2.20</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">During high flow situations.</p>
+</div>
+</details></section>
+</section>
+<section id="final-assignment">
+<h2><span class="section-number">2.2.5. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h2>
+<p>Today, you will use those time series to simulate a flood wave that
+occurred after 18 August 2011 (hindcasting). Run WALRUS with different
+parameters and different initial conditions, leading to a different
+collection of time series for each group. Collect the computed discharge
+from different runs as columns in a matrix. You now have an ensemble of
+forecasts. Compute the 25th, 50th and 75th percentile of the ensemble
+and cut out the values on 18, 19 and 20 August (so 3 time series with
+72 values). Save the output to your clipboard (preprogrammed) and paste
+it in Google Sheets before 13:00. We will discuss the results at 13:05.</p>
+<p>When did the flood peak occur based on the multi-run median?<br />
+What were the 25th, 50th and 75th discharge percentile for that hour?\</p>
+</section>
+<section id="references">
+<h2><span class="section-number">2.2.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Brauer, C. C., 2022. Home page for WALRUS. URL <code class="docutils literal notranslate"><span class="pre">github.com/ClaudiaBrauer/WALRUS</span></code></p></li>
+<li><p>Brauer, C. C., Teuling, A. J., Torfs, P. J. J. F., Uijlenhoet, R., 2014a. The Wageningen Lowland Runoff Simulator (WALRUS): a lumped rainfall-runoff model for catchments with shallow groundwater. Geosci. Model Dev. 7, 2313–2332.</p></li>
+<li><p>Brauer, C. C., Torfs, P. J. J. F., Teuling, A. J., Uijlenhoet, R., 2014b. The Wageningen Lowland Runoff Simulator (WALRUS): application to the Hupsel Brook catchment and Cabauw polder. Hydrol. Earth Syst. Sci. 18, 4007–4028.</p></li>
+<li><p>Brauer, C. C., Torfs, P. J. J. F., Teuling, A. J., Uijlenhoet, R., 2 February 2018. The Wageningen Lowland Runoff Simulator (WALRUS): User manual. Wageningen University, Version 1.10.</p></li>
+<li><p>Cluitmans, C. N. M., 2014. To identify and validate techniques for the identification of optimal parameter-sets for WALRUS in different catchments in The Netherlands. Master’s thesis, Wageningen University.</p></li>
+<li><p>Loos, R. E., 2015. Making WALRUS applicable for large catchments: a case study in the Reusel catchment. Master’s thesis, Wageningen University.</p></li>
+<li><p>Slenters, V., 2014. WALRUS en WINFO: het simuleren van afvoeren voor een nieuw voorwaarschuwingssysteem. Internship report (at Water Board Aa and Maas), Wageningen University.</p></li>
+<li><p>Ten Broek, J. M., 2014. Coupling WALRUS to SOBEK: Wageningen Lowland Runoff Simulator to 1D open water model. Internship report (at Water Board Rijn and IJssel), Wageningen University.</p></li>
+<li><p>Wendt, D. E., 2015. Snow hydrology in the Netherlands: Developing snowmelt algorithms for Dutch regional water management modules. Internship report (at HKV), Wageningen University.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lowlands"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lowlands_slides.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Catchment and climate hydrology</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../recession/recession_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to recession</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-walrus">2.2.2. Run WALRUS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-packages">2.2.2.1. Install packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-script">2.2.2.2. Base script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">2.2.2.3. Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding">2.2.2.4. Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-source-files">2.2.2.5. Change source files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">2.2.3. Case studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-berkel">2.2.3.1. Flood - Berkel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-level-management-polder-cabauw">2.2.3.2. Water level management - Polder Cabauw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upward-seepage-polder-oude-riet">2.2.3.3. Upward seepage - Polder Oude Riet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snow-reusel">2.2.3.4. Snow - Reusel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-discharge-relation-hupsel-brook-catchment">2.2.3.5. Stage-discharge relation – Hupsel Brook catchment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibration">2.2.4. Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-calibration">2.2.4.1. Manual calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-calibration">2.2.4.2. Automatic calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-parameter-space">2.2.4.3. Sampling the parameter space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">2.2.5. Final assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">2.2.6. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wageningen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

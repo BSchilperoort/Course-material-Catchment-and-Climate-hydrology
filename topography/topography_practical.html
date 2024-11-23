@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6.3. Topography based models &#8212; Course material Catchment and Climate hydrology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'topography/topography_practical';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Introduction Synthesis assignment" href="../synthesis%20assignment/synthesis%20assignment_intro.html" />
+    <link rel="prev" title="6.2. Topography-based modeling: TOPMODEL" href="topography_slides.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Course material Catchment and Climate hydrology</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../iceland%20excursion/iceland%20excursion_intro.html">1. Introduction Iceland excursion</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lowlands/lowlands_intro.html">2. Introduction to Lowlands</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lowlands/lowlands_slides.html">2.1. Catchment and climate hydrology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lowlands/lowlands_practical.html">2.2. WALRUS practical</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../recession/recession_intro.html">3. Introduction to recession</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recession/recession_slides.html">3.2. Recession-based modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recession/recession_practical.html">3.3. Recession-based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../snow%20ice/snow%20ice_intro.html">4. Introduction to Snow Ice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_slides.html">4.1. Snow and glaciers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_practical.html">4.2. Hydrologiska Byråns Vattenbalansavdelning model (HBV) in Iceland</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../soil%20moisture/soil%20moisture_intro.html">5. Introduction to Soil Moisture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_slides.html">5.1. Climate and the local water balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_practical.html">5.2. Climate and the local water balance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="topography_intro.html">6. Introduction to Topography</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="topography_slides.html">6.2. Topography-based modeling: TOPMODEL</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Topography based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../synthesis%20assignment/synthesis%20assignment_intro.html">7. Introduction Synthesis assignment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/topography/topography_practical.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Topography based models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.3.1. The Ourthe catchment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.3.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.3.2.1. DEM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.3.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-pit-filling">Sink / pit filling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-direction-slope-and-contributing-area">Flow direction, slope and contributing area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+<section class="tex2jax_ignore mathjax_ignore" id="topography-based-models">
+<h1><span class="section-number">6.3. </span>Topography based models<a class="headerlink" href="#topography-based-models" title="Permalink to this heading">#</a></h1>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+<section id="the-ourthe-catchment">
+<h2><span class="section-number">6.3.1. </span>The Ourthe catchment<a class="headerlink" href="#the-ourthe-catchment" title="Permalink to this heading">#</a></h2>
+<p>We will focus specifically on the catchment of the Ourthe upstream of Tabreux (1600 km<sup>2</sup>). Both topography and geomorphology play an important role in the hydrological response of the Upper Ourthe catchment. The catchment is situated in the hilly plateaus of the Ardennes in the eastern part of Belgium “a well-known area for those who followed Hydrogeology” (Figure 1). The elevation of the catchment varies between 150 and 650 m above sea level. The soil mainly consists of sandstone, shale and limestone, which have been eroded by small river systems that drain into the river Meuse. The region can be characterized as mostly rain-fed with some snow during the winter period. This results in a highly variable runoff regime with low discharges in summer and high peaks in winter.</p>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+<section id="digital-elevation-models-for-hydrological-applications">
+<h2><span class="section-number">6.3.2. </span>Digital elevation models for hydrological applications<a class="headerlink" href="#digital-elevation-models-for-hydrological-applications" title="Permalink to this heading">#</a></h2>
+<p>The data and scripts can be found on Brightspace. Download and unzip. This will generate the folder <code class="docutils literal notranslate"><span class="pre">topmodels</span></code>, containing the subdirectories <code class="docutils literal notranslate"><span class="pre">R_scripts</span></code>, <code class="docutils literal notranslate"><span class="pre">DEM</span></code> and <code class="docutils literal notranslate"><span class="pre">Data</span></code>.</p>
+<section id="dem">
+<h3><span class="section-number">6.3.2.1. </span>DEM<a class="headerlink" href="#dem" title="Permalink to this heading">#</a></h3>
+<p>The DEM you will use today was obtained by the Shuttle Radar Topography Mission (SRTM) which generated a near global elevation map. For Europe the resolution of this dataset is about 90 meter and can be downloaded from the internet (<a class="reference external" href="http://www2.jpl.nasa.gov/srtm/">http://www2.jpl.nasa.gov/srtm/</a>). Your DEM file is called <code class="docutils literal notranslate"><span class="pre">ourthe_90m.asc</span></code> and is located in the folder <code class="docutils literal notranslate"><span class="pre">DEM</span></code>.</p>
+<p><img alt="a figure" src="images/topomap.png" /></p>
+<p>Figure 1: (Location of the Ardennes and a 200x200-km box with a topographic map, the main channel network (black), the Ourthe catchment boundary (white), the catchment outlet (<span class="math notranslate nohighlight">\(\blacktriangle\)</span>), the meteorological station (<span class="math notranslate nohighlight">\(\circ\)</span>), rain gauges (+) and weather radar (<span class="math notranslate nohighlight">\(\bullet\)</span>).)</p>
+<hr class="docutils" />
+<p>Open this file in Notepad and find out how this ASCII file is set up. What do the numbers in the big matrix mean?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ The elevation of each pixel.
+  </span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="preprocessing">
+<h3><span class="section-number">6.3.2.2. </span>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h3>
+<p>Before you can use the DEM for hydrological applications, the DEM has to be preprocessed. In this preprocessing step, pits in the topography field are filled, flow directions are computed and contributing areas and slope gradients are computed.</p>
+<p>For this preprocessing, multiple GIS programs can be used (e.g. ArcGIS, SAGA GIS, GRASS). For this practical these preprocessing steps have already been performed using the TAUDEM package. TAUDEM is a terrain analysis package for ArcGIS developed by D.G. Tarboton of Utah State University. For more information concerning the specific aspects of TAUDEM, see <em><a class="reference external" href="http://hydrology.usu.edu/taudem/taudem5.0/">http://hydrology.usu.edu/taudem/taudem5.0/</a></em> <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. The following sections explain what happens during the preprocessing phase.</p>
+<section id="sink-pit-filling">
+<h4>Sink / pit filling<a class="headerlink" href="#sink-pit-filling" title="Permalink to this heading">#</a></h4>
+<p>The main assumptions behind spatial hydrological analyses is that water will flow from higher to lower cells. To obtain a continuous flow direction map, the lowest cell in a DEM should be situated at the boundary of a DEM. Unfortunately, local topography or erroneous measurements by the satellite can result in local depressions (also called sinks or pits). Because the cells surrounding the pits are higher in elevation, water will never flow out of them and will never reach the river.</p>
+<p>Although sinks may represent real terrain features, they hinder the analysis of drainage networks. Local depressions should therefore be filled before making a flow direction map. Using TAUDEM, the original DEM file <code class="docutils literal notranslate"><span class="pre">ourthe_90m.asc</span></code> was corrected for pits, resulting in a new DEM file <code class="docutils literal notranslate"><span class="pre">ourthe_90mfel.asc</span></code>, which can also be found in the <code class="docutils literal notranslate"><span class="pre">DEM</span></code> folder.</p>
+</section>
+<section id="flow-direction-slope-and-contributing-area">
+<h4>Flow direction, slope and contributing area<a class="headerlink" href="#flow-direction-slope-and-contributing-area" title="Permalink to this heading">#</a></h4>
+<p>There are many ways to compute flow directions. In this practical the simplest and oldest method will be applied: the D8 flow direction method. The elevation of each pixel is compared to the elevations of the 8~neighbouring cells and water will flow in the direction of the steepest descent:</p>
+<p><img alt="a figure" src="images/DEM_example.png" /></p>
+<p>The flow directions are represented by numbers:</p>
+<p><img alt="a figure" src="images/D8_flow_directions.png" /></p>
+<p>Boundary pixels for which no downstream direction could be obtained receive the value of <span class="math notranslate nohighlight">\(-1\)</span>. The output of this step was saved in the file <code class="docutils literal notranslate"><span class="pre">ourthe_90mp.asc</span></code>. Once these directions have been determined, TAUDEM immediately generates the file <code class="docutils literal notranslate"><span class="pre">ourthe_90msd8.asc</span></code>, containing the local slopes for all pixels. From the flow direction map, the upstream area for each pixel can be computed. TAUDEM starts at the highest points of the DEM and moves downward. In <code class="docutils literal notranslate"><span class="pre">ourthe_90mad8.asc</span></code> the number of upstream pixels is given for each pixel.</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">ourthe_90mp.asc</span></code>, <code class="docutils literal notranslate"><span class="pre">ourthe_90msd8.asc</span></code> and <code class="docutils literal notranslate"><span class="pre">ourthe_90mad8.asc</span></code> in Notepad and try to understand what the numbers mean.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="r-for-dem-analyses">
+<h3><span class="section-number">6.3.2.3. </span>R for DEM analyses<a class="headerlink" href="#r-for-dem-analyses" title="Permalink to this heading">#</a></h3>
+<p>After these preprocessing steps, R can be used for spatial hydrological analyses. Open RStudio and load the script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code>. Set the working directory and run the part under <code class="docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">started</span></code>.</p>
+<p>The folder <code class="docutils literal notranslate"><span class="pre">R_scripts</span></code> contains more scripts with functions used in the main R script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code> (you don’t have to open these scripts now):</p>
+<ul class="simple">
+<li><p>g</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./topography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="topography_slides.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Topography-based modeling: TOPMODEL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../synthesis%20assignment/synthesis%20assignment_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Introduction Synthesis assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.3.1. The Ourthe catchment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.3.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.3.2.1. DEM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.3.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-pit-filling">Sink / pit filling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-direction-slope-and-contributing-area">Flow direction, slope and contributing area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wageningen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

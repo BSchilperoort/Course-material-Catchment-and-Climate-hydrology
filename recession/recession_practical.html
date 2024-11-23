@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.3. Recession-based models &#8212; Course material Catchment and Climate hydrology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recession/recession_practical';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Introduction to Snow Ice" href="../snow%20ice/snow%20ice_intro.html" />
+    <link rel="prev" title="3.2. Recession-based modeling" href="recession_slides.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Course material Catchment and Climate hydrology</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../iceland%20excursion/iceland%20excursion_intro.html">1. Introduction Iceland excursion</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lowlands/lowlands_intro.html">2. Introduction to Lowlands</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lowlands/lowlands_slides.html">2.1. Catchment and climate hydrology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lowlands/lowlands_practical.html">2.2. WALRUS practical</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="recession_intro.html">3. Introduction to recession</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recession_slides.html">3.2. Recession-based modeling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Recession-based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../snow%20ice/snow%20ice_intro.html">4. Introduction to Snow Ice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_slides.html">4.1. Snow and glaciers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_practical.html">4.2. Hydrologiska Byråns Vattenbalansavdelning model (HBV) in Iceland</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../soil%20moisture/soil%20moisture_intro.html">5. Introduction to Soil Moisture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_slides.html">5.1. Climate and the local water balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soil%20moisture/soil%20moisture_practical.html">5.2. Climate and the local water balance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../topography/topography_intro.html">6. Introduction to Topography</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_slides.html">6.2. Topography-based modeling: TOPMODEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_practical.html">6.3. Topography based models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../synthesis%20assignment/synthesis%20assignment_intro.html">7. Introduction Synthesis assignment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/recession/recession_practical.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Recession-based models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.3.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rietholzbach-catchment">3.3.1.1. The Rietholzbach catchment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">3.3.1.2. Getting started</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recession-analysis">3.3.2. Recession analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-recessions">3.3.2.1. Individual recessions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-recession-periods">3.3.2.2. Discontinuous recession periods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-recession-coefficients-in-a-double-logarithmic-graph">3.3.2.3. Fitting recession coefficients in a double-logarithmic graph</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-hydrology-backward">3.3.3. Doing hydrology backward</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">3.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architecture">3.3.4.1. Model architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equation">3.3.4.2. Differential equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runge-kutta-integration-scheme">3.3.4.3. Runge-Kutta integration scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">3.3.4.4. For-loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run">3.3.4.5. Run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.3.4.6. Run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">3.3.4.7. Final assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.5. References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="recession-based-models">
+<h1><span class="section-number">3.3. </span>Recession-based models<a class="headerlink" href="#recession-based-models" title="Permalink to this heading">#</a></h1>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+<section id="introduction">
+<h2><span class="section-number">3.3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="the-rietholzbach-catchment">
+<h3><span class="section-number">3.3.1.1. </span>The Rietholzbach catchment<a class="headerlink" href="#the-rietholzbach-catchment" title="Permalink to this heading">#</a></h3>
+<p>The Rietholzbach catchment (3.3 km<sup>2</sup> ) is part of the Thur river basin, located in Northeast-Switzerland (Melsen2014). The altitude ranges from 950 to 682 m, with an average slope of 14.5 <span class="math notranslate nohighlight">\(^\circ\)</span>. Land use consists of 72% pastures, 26% forest, 1% orchards and 1% settlements. Soil depth (on bedrock of limestone, dolomite, and conglomerate) varies from 20-50 cm on steep slopes, to several meters in the valley. The simple dynamical system approach has already been applied to the Rietholzbach catchment (Teuling et al.,
+2010; Melsen et al., 2014).</p>
+</section>
+<section id="getting-started">
+<h3><span class="section-number">3.3.1.2. </span>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h3>
+<p>Unzip all Brightspace files for this practical as a folder on your computer (e.g. <code class="docutils literal notranslate"><span class="pre">D:/catchment_climate_</span> <span class="pre">hydrology/recession_based_models/).</span></code></p>
+<p>Open the script <code class="docutils literal notranslate"><span class="pre">recession.R</span></code> and take a look at it. You will walk through this script line by line, so don’t read or run it all at once. Some parts are preprogrammed; others are not. When you encounter “…” in the script, replace them with appropriate commands (or add lines) and run them with
+<code class="docutils literal notranslate"><span class="pre">CTRL+ENTER</span></code>.
+Change the working directory under “Getting Started” and run the lines in this section.</p>
+<p>The data in the file <code class="docutils literal notranslate"><span class="pre">PEQ_Rietholzbach_hour.dat</span></code> are hourly sums of discharge (Q), precipitation (P), actual evapotranspiration measured with a lysimeter (ET), temperature (T), and global radiation (GloRad).</p>
+</div><div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="recession-analysis">
+<h2><span class="section-number">3.3.2. </span>Recession analysis<a class="headerlink" href="#recession-analysis" title="Permalink to this heading">#</a></h2>
+<section id="individual-recessions">
+<h3><span class="section-number">3.3.2.1. </span>Individual recessions<a class="headerlink" href="#individual-recessions" title="Permalink to this heading">#</a></h3>
+<p>The most straightforward (but not necessarily the best) method to find reservoir coefficients, is to assume a linear reservoir and obtain coefficient <span class="math notranslate nohighlight">\(k\)</span> by fitting curves to individual recessions.</p>
+<p>Select <em>one</em> nice recession (one decreasing line, not a complete hydrograph) by hand. Fit a curve (in a graph with linear <span class="math notranslate nohighlight">\(y\)</span>-axis) and a line (in a graph with logarithmic <span class="math notranslate nohighlight">\(y\)</span>-axis) manually through the observed discharges by changing the value of <span class="math notranslate nohighlight">\(k\)</span>.
+Remember that when</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\mathrm{d}Q}{\mathrm{d}t} = \frac{Q}{k}\ \ , \qquad \qquad \qquad (7)
+\]</div>
+<p>the flow out of a linear reservoir can be given by</p>
+<div class="math notranslate nohighlight">
+\[
+Q_t = Q_0 \cdot e^ {-\frac{t}{k}}\ . \qquad \qquad \qquad (8)
+\]</div>
+<p>You have to program this curve yourself, but some help is available in the script.</p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>What values of <span class="math notranslate nohighlight">\(k\)</span> did you find? Try a few different recessions and look at the variability. Give a best guess and a range. Also write your values on the blackboard in the classroom.</strong></p>
+<p><img alt="a figure" src="../_images/indiv_rec-1.png" /></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>This strongly depends on the period you selected. Values of <span class="math notranslate nohighlight">\(k\)</span> can range from 10 to 200.
+</span></p>
+</details>
+<hr class="docutils" />
+<p><strong>What are the units of <span class="math notranslate nohighlight">\(k\)</span>?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(-dQ/dt = a \cdot Q\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow \frac{mm}{h^2}=\frac{1}{[k]} \cdot \frac{mm}{h}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow \frac{1}{h}=\frac{1}{[k]}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow [k] = h\)</span>
+</span></p>
+</details>
+<hr class="docutils" />
+<p><strong>What does a large value of <span class="math notranslate nohighlight">\(k\)</span> mean in terms of discharge recession rate? (Does the discharge decrease quickly or not?)</strong></p>
+<details>
+  <summary>Show Answer</summary>
+<span style="color:blue">
+<p>Large k <span class="math notranslate nohighlight">\(\rightarrow\)</span> small <span class="math notranslate nohighlight">\(\frac{1}{k}\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(-\frac{dQ}{dt}\)</span> small
+at a certain <span class="math notranslate nohighlight">\(Q\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> slow decrease (= low discharge recession rate).</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="discontinuous-recession-periods">
+<h3><span class="section-number">3.3.2.2. </span>Discontinuous recession periods<a class="headerlink" href="#discontinuous-recession-periods" title="Permalink to this heading">#</a></h3>
+<p>For this method, you select many smaller recession periods from the whole time series using a set of criteria, such as:</p>
+<p><strong>1.</strong> There should be no missing data (NA’s).</p>
+<p><strong>2.</strong> Change in discharge should be negative or zero (discharge should decrease).</p>
+<p><strong>3.</strong> Precipitation sum of x preceding hours should be zero (no rain for x hours).</p>
+<p><strong>4.</strong> Discharge should be at least x mm/h.</p>
+<p><strong>5.</strong>. Evapotranspiration sum of the preceding x hours should not exceed x mm.</p>
+<p><strong>6.</strong> Something you design yourself.</p>
+<p>The first 3 criteria are implemented in the script. In the next exercises you will select recession periods for a set of criteria by changing the criteria in the script and running this part of the script.
+Look at the data file and figure the script creates to see what it has done.</p>
+<p><img alt="a figure" src="../_images/selection.png" /></p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>What happens to the number and length of selected recession periods when you allow 0.2~mm of precipitation in the preceding 5 hours?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">Recession periods start sooner after the rainfall event and are longer.</span>
+</details>
+<hr class="docutils" />
+<p><strong>What criterion could you alter when you want to emphasize on the long tails of the recessions instead of the peaks?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<ul class="simple">
+<li><p>Make the parameter <code class="docutils literal notranslate"><span class="pre">dryhours</span></code> larger, so points are only selected when rainfall is a long time ago.</p></li>
+<li><p>Add the criterion that <span class="math notranslate nohighlight">\(-dQ/dt\)</span> should be smaller than a certain value, so you only select the points with a low recession rate.</p></li>
+<li><p>Add the criterion that <span class="math notranslate nohighlight">\(Q\)</span> should be smaller than a certain value, so you only select low flows.</p></li>
+</ul>
+  </span>
+</details>
+<hr class="docutils" />
+<p>Try some other selection criteria (don’t spend more than 30 minutes on this part and skip this if it’s later than 9:15).</p>
+<p><strong><em>BONUS</em></strong> <strong>What other criteria did you use and what were the results for the selected periods?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<ul class="simple">
+<li><p>No <span class="math notranslate nohighlight">\(ET_{pot} \rightarrow\)</span> only night-hours included.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> should exceed 0.3 mm/h. <span class="math notranslate nohighlight">\(\rightarrow\)</span> emphasis on high flows.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> should not exceed 0.05 mm/h. <span class="math notranslate nohighlight">\(\rightarrow\)</span> emphasis on low flows.</p></li>
+</ul>
+  </span>
+</details>
+<hr class="docutils" />
+<p>Run the script once more with what you consider the best selection criteria (or the starting criteria if you don’t know which ones to choose) so R remembers these recession periods for the next assignments.</p>
+</section>
+<section id="fitting-recession-coefficients-in-a-double-logarithmic-graph">
+<h3><span class="section-number">3.3.2.3. </span>Fitting recession coefficients in a double-logarithmic graph<a class="headerlink" href="#fitting-recession-coefficients-in-a-double-logarithmic-graph" title="Permalink to this heading">#</a></h3>
+<p>To test whether the Rietholzbach catchment behaves like a linear or nonlinear catchment, plot <span class="math notranslate nohighlight">\(Q\)</span> versus <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> in a double-logarithmic graph. Fit two lines through the cloud of points, representing a linear and nonlinear model.</p>
+<p><img alt="a figure" src="../_images/double_log.png" /></p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>What values of <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> did you find?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(k\)</span>: 30,
+<span class="math notranslate nohighlight">\(a\)</span>: 0.105,
+<span class="math notranslate nohighlight">\(b\)</span>: 1.85</p>
+  </span>
+</details>
+<hr class="docutils" />
+<p><strong>What do the slope and intercept of the lines represent?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Slope: <span class="math notranslate nohighlight">\(b\)</span> (if linear: slope = 1)</p>
+<p>Intercept: <span class="math notranslate nohighlight">\((a)\)</span> (if linear: <span class="math notranslate nohighlight">\(\ln (\frac{1}{k})\)</span> )
+</span></p>
+</details>
+<hr class="docutils" />
+<p><strong>What do the lines tell you about the nonlinearity of the catchment?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>If <span class="math notranslate nohighlight">\(b \neq 1\)</span>, the catchment in nonlinear.
+The farther from 1, the more nonlinear the catchment is.
+</span></p>
+</details>
+<hr class="docutils" />
+<p><strong>BONUS Fit lines for different selection criteria to assess the sensitivity of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> to your choice of selection criteria. Which values did you obtain for which selection criterion?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Depends on your choice.
+</span></p>
+</details>
+<p>When you fitted curves to individual recessions, you included all hours of the day, while (Kirchner2009) excluded the hours during which <span class="math notranslate nohighlight">\(ET&gt;0\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Is the recession rate <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> higher or lower during day-time than at night? Why?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Higher, because evapotranspiration causes additional decrease in storage and therefore in discharge.
+  </span>
+</details>
+<hr class="docutils" />
+<p><strong>Think about what would happen to the fitted lines in the (<span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span>)-plot if you would exclude day-time hours from you analysis (so when <span class="math notranslate nohighlight">\(ET=0\)</span>).</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ The average recession rate is lower, so the fitted lines will be lower.
+  </span>
+</details>
+<p>If there is enough time, you can try it as well.</p>
+<hr class="docutils" />
+<p>Write your best guesses of the values of <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> on the blackboard at the front of the classroom.</p>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="doing-hydrology-backward">
+<h2><span class="section-number">3.3.3. </span>Doing hydrology backward<a class="headerlink" href="#doing-hydrology-backward" title="Permalink to this heading">#</a></h2>
+<p>You estimated recession coefficients for the Rietholzbach catchment, both for a linear and a nonlinear reservoir. With these very simple models, you can simulate discharge using precipitation data (which you will do in <a class="reference internal" href="#rainfall-runoff-modelling"><span class="xref myst">sec.3.3.4</span></a>). In this Section, you will use the same coefficients to do the opposite: obtaining precipitation from discharge.</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">select_part</span></code> to cut one year from the entire data frame and put them in a smaller data frame (called <code class="docutils literal notranslate"><span class="pre">d</span></code>). The function <code class="docutils literal notranslate"><span class="pre">select_part</span></code> is preprogrammed and stored in a different script (you don’t have to change anything in the script, but you can take a look at the script <code class="docutils literal notranslate"><span class="pre">select_part.R</span></code> to see what is does). Some hints are given in the script on how to call this function.</p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>Why would you want to infer precipitation from discharge observations?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Because rain gauges measure on a small spatial scale, while often precipitation at catchment scale is required.
+  </span>
+</details>
+<hr class="docutils" />
+<p>As a first estimate, assume that the Rietholzbach catchment can be described by a linear reservoir. Use the <code class="docutils literal notranslate"><span class="pre">k</span></code> you obtained in the previous assignments to express <code class="docutils literal notranslate"><span class="pre">a_new</span></code> in the script, and fill out the correct value for <code class="docutils literal notranslate"><span class="pre">b_new</span></code> if a linear reservoir is assumed.</p>
+<hr class="docutils" />
+<p><strong>Write the expression for the sensitivity function <span class="math notranslate nohighlight">\(g\)</span> with your parameter values (use <a class="reference internal" href="#"><span class="xref myst">eq4</span></a>)</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(g(Q)=a Q^{b-1}\)</span>, so for a linear reservoir <span class="math notranslate nohighlight">\(g = \frac{1}{k} \cdot Q^0\)</span>
+</span></p>
+</details>
+<p><strong>Which important assumption concerning evapotranspiration does Kirchner make in order to be able to infer precipitation?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ That there is no or negligible evaporation during precipitation.
+  </span>
+</details>
+<hr class="docutils" />
+<p>On page 21 of the article by (Kirchner2009) the expression for precipitation inference in given. This expression is implemented in R. Run the lines to infer precipitation and compare the results to measured precipitation: plot them, compute the precipitation sums and check the correlation.</p>
+<p>Also a time lag is incorporated in the model, because usually it takes some time for a catchment to respond to rainfall. This would mean that, if we infer precipitation from discharge directly, we should correct for the time lag between precipitation and discharge. Try different time lags (by changing <code class="docutils literal notranslate"><span class="pre">l</span></code> in the script) and see if it improves the inferred precipitation.</p>
+<p><img alt="a figure" src="../_images/P_inference.png" /></p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>In what order would you expect the lag to be in the Rietholzbach catchment? Why?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ In the order of one hour or smaller. This does not improve the precipitation inference.
+  </span>
+</details>
+<p>Try different values for <code class="docutils literal notranslate"><span class="pre">a_new</span></code> and <code class="docutils literal notranslate"><span class="pre">b_new</span></code>, also using a nonlinear reservoir.
+<strong>Does this improve the precipitation inference?</strong></p>
+<hr class="docutils" />
+<p><strong>Unsatisfactory inference results may be caused by the many assumptions in this approach. But despite these assumptions, inferred precipitation will never be equal to measured precipitation. Why?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Because inferred precipitation is lumped catchment precipitation, while measured precipitation is a point measurement.
+  </span>
+</details>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+<section id="rainfall-runoff-modelling">
+<h2><span class="section-number">3.3.4. </span>Rainfall-runoff modelling<a class="headerlink" href="#rainfall-runoff-modelling" title="Permalink to this heading">#</a></h2>
+<p>The nonlinear reservoir from which you just determined the reservoir coefficients can be seen as the main building block of the simple dynamical system model. In this Section, you will build this model. Close the previous script and open <code class="docutils literal notranslate"><span class="pre">build_model.R</span></code>. As you can see, this script is rather empty. You will program the model step by step. If you’re stuck, you can look in the ``hints’’-folder. So, you can make it as difficult for yourself as you want. Do make sure that you have a working model by 12:15, so you can start working on the final assignment then.</p>
+<section id="model-architecture">
+<h3><span class="section-number">3.3.4.1. </span>Model architecture<a class="headerlink" href="#model-architecture" title="Permalink to this heading">#</a></h3>
+<p>The model consists of 3~functions, which you will write yourself. The core of the model is formed by the differential equation representing the nonlinear reservoir <a class="reference internal" href="#differential-equation"><span class="xref myst">Sec: 3.3.4.2</span></a>. To solve this equation, you use an integration scheme in which this differential-equation-function is called <a class="reference internal" href="#runge-kutta-integration-scheme"><span class="xref myst">Sec: 3.3.4.3</span></a>. Finally, you run a for-loop over all timesteps, and in each time step you use the integration scheme <a class="reference internal" href="#for-loop"><span class="xref myst">Sec: 3.3.4.4</span></a>.</p>
+</section>
+<section id="differential-equation">
+<h3><span class="section-number">3.3.4.2. </span>Differential equation<a class="headerlink" href="#differential-equation" title="Permalink to this heading">#</a></h3>
+<p>As mentioned in <a class="reference internal" href="#"><span class="xref myst">eq 6</span></a>, the model equation will be solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>.  By introducing a variable <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+x = \ln(Q) \qquad \qquad \qquad (9)
+\]</div>
+<p>you can rewrite <a class="reference internal" href="#"><span class="xref myst">eq 6</span></a> to</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}x}{\mathrm{d}t} = a \cdot (e^ x)^ {b-1} \cdot \left(\frac{P-ET}{e^ x}-1\right) \qquad \qquad \qquad (10)
+\]</div>
+<p>Write a function (with name <code class="docutils literal notranslate"><span class="pre">diff_eq</span></code>) in the script which computes <span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t}\)</span> (so which returns the right-hand side of this equation) given a certain <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. Later on, you will use this function every time step, so to make clear that you want one value of <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and not the whole vector, give the arguments the names <code class="docutils literal notranslate"><span class="pre">Pi</span></code>, <code class="docutils literal notranslate"><span class="pre">ETi</span></code> and <code class="docutils literal notranslate"><span class="pre">xi</span></code> (and <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>). Note that in R, the function <code class="docutils literal notranslate"><span class="pre">log</span></code> computes the natural logarithm and <code class="docutils literal notranslate"><span class="pre">exp</span></code> the exponent.</p>
+</section>
+<section id="runge-kutta-integration-scheme">
+<h3><span class="section-number">3.3.4.3. </span>Runge-Kutta integration scheme<a class="headerlink" href="#runge-kutta-integration-scheme" title="Permalink to this heading">#</a></h3>
+<p>There are many ways to solve eq. (10) numerically. The most straightforward way is Euler forward, in which a new value of a variable (<span class="math notranslate nohighlight">\(x_{i+1}\)</span>) is computed from the old value (<span class="math notranslate nohighlight">\(x_i\)</span>) by</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i+1} = x_i + a \cdot (e^{x_i})^ {b-1} \cdot \left(\frac{P_{i+1}-ET_{i+1}}{e^{x_i}}-1\right) \Delta t\ \ .  \qquad \qquad \qquad (11)
+\]</div>
+<p>Because the Euler forward method is not always stable, you will use the Runge-Kutta method instead (you can also try the Euler forward method if you want). In the Runge-Kutta integration scheme, you solve this differential equation in steps. When eq. (10) is abbreviated to <span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t} = f(x(t))\)</span>, these steps are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+k_1 &amp;= f(x_i) \qquad \qquad \qquad\qquad\qquad\qquad \qquad\qquad\qquad\qquad\qquad(12) \\
+k_2 &amp;= f\left(x_i + \frac{\Delta t}{2} k_1\right)  \qquad\qquad \qquad \qquad\qquad\qquad \qquad\qquad\qquad(13)\\
+k_3 &amp;= f\left(x_i + \frac{\Delta t}{2} k_2\right)  \qquad\qquad \qquad \qquad\qquad\qquad \qquad\qquad\qquad(14) \\
+k_4 &amp;= f\left(x_i + k_3\right) \qquad \qquad \qquad \qquad\qquad \qquad\qquad \qquad\qquad\qquad(15) \\
+x_{i+1} &amp;= x_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6} \qquad\qquad  \qquad\qquad \qquad\qquad\qquad(16)
+\end{aligned}
+\end{split}\]</div>
+<p>Program a function called <code class="docutils literal notranslate"><span class="pre">runge_kutta</span></code> with the same arguments as <code class="docutils literal notranslate"><span class="pre">diff_eq</span></code>. Within the <code class="docutils literal notranslate"><span class="pre">runge_kutta</span></code>-function, perform the integration steps by calling the <code class="docutils literal notranslate"><span class="pre">diff_eq</span></code>-function with different values for the argument <code class="docutils literal notranslate"><span class="pre">xi</span></code> and return <span class="math notranslate nohighlight">\(x_{i+1}\)</span>. Use <span class="math notranslate nohighlight">\(\Delta t = 1\)</span> h.</p>
+</section>
+<section id="for-loop">
+<h3><span class="section-number">3.3.4.4. </span>For-loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+<p>Next, make a function called \verb!run_model! with arguments <code class="docutils literal notranslate"><span class="pre">forc</span></code> (a data frame with forcing data <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span>), <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. This function consists of three parts.</p>
+<ol class="arabic simple">
+<li><p>Make an empty vector called <code class="docutils literal notranslate"><span class="pre">x</span></code>. Fill the first element of <code class="docutils literal notranslate"><span class="pre">x</span></code> using the observed ( Q ) at ( t=0 ) (this is the starting value of <code class="docutils literal notranslate"><span class="pre">x</span></code>), which you can extract automatically from the <code class="docutils literal notranslate"><span class="pre">forc</span></code> data frame.</p></li>
+<li><p>Run a for-loop over all timesteps, starting with timestep number 2 (as you already have the first one). For each step, call the function <code class="docutils literal notranslate"><span class="pre">runge_kutta</span></code> and write the result in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code>. In this way, all elements in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code> will be filled step by step.</p></li>
+<li><p>Compute ( Q ) from <code class="docutils literal notranslate"><span class="pre">x</span></code> and return this modelled discharge.</p></li>
+</ol>
+</section>
+<section id="run">
+<h3><span class="section-number">3.3.4.5. </span>Run<a class="headerlink" href="#run" title="Permalink to this heading">#</a></h3>
+<p>When you have programmed the three functions, you are ready to run your model. Select one year from the whole data file and run the model by calling the function <code class="docutils literal notranslate"><span class="pre">run_model</span></code>. Plot the results (using the preprogrammed function <code class="docutils literal notranslate"><span class="pre">plot_output</span></code>) and save the output. Try different values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> which you obtained with recession analysis and store the output with different names.</p>
+<p>If it doesn’t run, check your code from Sections <em><a class="reference internal" href="#model-architecture"><span class="xref myst">3.3.4.1</span></a>-<a class="reference internal" href="#differential-equation"><span class="xref myst">3.3.4.2</span></a></em> with the last hints.
+If discharge drops to <code class="docutils literal notranslate"><span class="pre">-inf</span></code> and the <code class="docutils literal notranslate"><span class="pre">NA</span></code>, you may need a lower boundary for <code class="docutils literal notranslate"><span class="pre">x</span></code> (see last hint).</p>
+<p><img alt="a figure" src="../_images/hydrograph.png" /></p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>When is the model able to simulate the observed discharge well and when does it fail?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Depends on your choice of period.
+  </span>
+</details>
+<p><strong>Simulate a summer period. Discuss how the model performs</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Depends on your choice of period.
+  </span>
+</details>
+<p><strong>Simulate a winter period with temperatures below zero. Discuss how the model performs</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ Depends on your choice of period.
+  </span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3><span class="section-number">3.3.4.6. </span>Run<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>You can also adjust the values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> to better fit the observed hydrograph. You can do this manually, by changing <span class="math notranslate nohighlight">\(a\)</span> and/or <span class="math notranslate nohighlight">\(b\)</span>, running the model and evaluating the outcomes by eye.</p>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<p><strong>What happens to the hydrograph when you increase <span class="math notranslate nohighlight">\(b\)</span> while keeping <span class="math notranslate nohighlight">\(a\)</span> the same? You can answer this by explaining the effect of a higher <span class="math notranslate nohighlight">\(b\)</span> on the log-log plot from <a class="reference internal" href="#fitting-recession-coefficients-in-a-double-logarithmic-graph"><span class="xref myst">Sec. 3.3.2.3</span></a> or by trying and looking at the effect on the hydrograph.</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>When you increase <span class="math notranslate nohighlight">\(b\)</span>, the line in the (<span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span>)-plot becomes steeper. Because the <span class="math notranslate nohighlight">\(y\)</span>-axis is on the right hand side of the plot, the left end of the regression line becomes lower. So, at low discharges, discharge will drop less quickly than with lower values of <span class="math notranslate nohighlight">\(b\)</span>, resulting at flatter recessions in summer periods.
+</span></p>
+</details>
+<p><strong>What happens to the hydrograph when you increase <span class="math notranslate nohighlight">\(a\)</span> while keeping <span class="math notranslate nohighlight">\(b\)</span> the same?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>When <span class="math notranslate nohighlight">\(a\)</span> is higher, the intercept with the <span class="math notranslate nohighlight">\(y\)</span>-axis becomes higher. The whole curve will be lifted in the (<span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span>)-plot. So, recession rates will increase for all discharges. Discharge will drop more quickly during peaks and during recessions.
+</span></p>
+</details>
+<hr class="docutils" />
+<p>You can also use an optimization algorithm to find good values for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. In the script, the Levenberg-Marquardt optimization algorithm is used. This algorithm was preprogrammed in the R-package <code class="docutils literal notranslate"><span class="pre">minpack.lm</span></code>, which you loaded at the beginning of the script.</p>
+<hr class="docutils" />
+<p><strong>Which values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> did you find?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+  Depends on your period and the values you tried.
+  </span>
+</details>
+<hr class="docutils" />
+<p>The Levenberg-Marquardt algorithm is a variation on the classical steepest descent method, without a random component. This means that when you start with the same values, you will always end up in the same optimum. This optimum, however, can be local instead of the global optimum you were searching for.</p>
+<hr class="docutils" />
+<p><strong>BONUS Use different starting values for the optimization procedure to get a few good parameter sets. Which values did you find now?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+  Different results possible.
+  </span>
+</details>
+<hr class="docutils" />
+<p>The optimization algorithm also provides information on the significance of the obtained parameter values and parameter dependence.</p>
+<hr class="docutils" />
+<p><strong>BONUS Are your results significant?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+  This depends on your starting values and the period you used. The number of stars (with maximum of three) behind the summary expresses the significance.
+  </span>
+</details>
+<p><strong>BONUS Are <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> independent? Can you explain the dependence with the (<span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span>)-plot?</strong></p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Probably not. When you increase <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> should often also be increased. This makes sense when you look at the (<span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span>)-plot. When <span class="math notranslate nohighlight">\(a\)</span> is increased, the intercept of the line is higher. Because the <span class="math notranslate nohighlight">\(y\)</span>-axis is on the right hand side of the plot, the right end of the regression line becomes higher. To make the regression line go through the points again, you should increase the slope <span class="math notranslate nohighlight">\(b\)</span>.
+</span></p>
+</details>
+</section>
+<section id="final-assignment">
+<h3><span class="section-number">3.3.4.7. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h3>
+<p>Give an estimate of the peak discharge around 7~and 8~August~2007 using the simple dynamical system approach. For this period, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span> are given, but the <span class="math notranslate nohighlight">\(Q\)</span> data are replaced with NAs. Run the model with different parameter sets to assess the effect of parameter uncertainty on the model outcomes. You are also welcome to try different initial conditions or put noise on the observed <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(ET\)</span> to simulate measurement errors.</p>
+<p>You can run the model for a longer period around the period with missing data. Make sure to start on a day when there was still discharge available, because otherwise the model does not have starting values (since they are derived from <span class="math notranslate nohighlight">\(Q_0\)</span>) and will not run.</p>
+<p>Cut out the discharges from 7~and 8~Aug. Make one vector of these 48~hourly values. Copy this vector to your clipboard (preprogrammed in the script) and paste it in Google Sheets before 13.00. We will discuss the results at 13:05.</p>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="references">
+<h2><span class="section-number">3.3.5. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Brauer, C.~C., Teuling, A.~J., Torfs, P.~J.~J.~F., Uijlenhoet, R. (2013). Investigating storage-discharge relations in a lowland catchment using hydrograph fitting, recession analysis, and soil moisture data. <em>Water Resources Research, 49</em>, 4257–4264.</p></li>
+<li><p>Brutsaert, W., Nieber, J.~L. (1977). Regionalized drought flow hydrographs from a mature glaciated plateau. <em>Water Resources Research, 13</em>, 637–643.</p></li>
+<li><p>Kirchner, J.~W. (2009). Catchments as simple dynamical systems: catchment characterization, rainfall - runoff modeling, and doing hydrology backwards. <em>Water Resources Research, 45</em>, W02429.</p></li>
+<li><p>Melsen, L.~A., Teuling, A.~J., van Berkum, S.~W., Torfs, P. J.~J.~F., Uijlenhoet, R. (2014). Catchments as simple dynamical systems: A case study on methods and data requirements for parameter identification. <em>Water Resources Research, 50</em>, 5577–5596.</p></li>
+<li><p>Teuling, A.~J., Lehner, I., Kirchner, J.~W., Seneviratne, S.~I. (2010). Catchments as simple dynamical systems: Experience from a Swiss prealpine catchment. <em>Water Resources Research, 46</em>, W10502.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./recession"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="recession_slides.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Recession-based modeling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../snow%20ice/snow%20ice_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Snow Ice</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.3.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rietholzbach-catchment">3.3.1.1. The Rietholzbach catchment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">3.3.1.2. Getting started</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recession-analysis">3.3.2. Recession analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-recessions">3.3.2.1. Individual recessions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-recession-periods">3.3.2.2. Discontinuous recession periods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-recession-coefficients-in-a-double-logarithmic-graph">3.3.2.3. Fitting recession coefficients in a double-logarithmic graph</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-hydrology-backward">3.3.3. Doing hydrology backward</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">3.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architecture">3.3.4.1. Model architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equation">3.3.4.2. Differential equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runge-kutta-integration-scheme">3.3.4.3. Runge-Kutta integration scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">3.3.4.4. For-loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run">3.3.4.5. Run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.3.4.6. Run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">3.3.4.7. Final assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.5. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wageningen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
