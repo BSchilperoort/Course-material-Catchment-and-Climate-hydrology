@@ -379,42 +379,37 @@ document.write(`
 <h2><span class="section-number">3.1. </span>Theory recap<a class="headerlink" href="#theory-recap" title="Permalink to this heading">#</a></h2>
 <p>The simple dynamical system approach (Kirchner, 2009) plays a central role in this practical, and therefore the principles are repeated in this section (largely copied from Brauer et al., 2013).</p>
 <p>For the relationship between discharge (Q) and storage (S),</p>
-<p><a id="eq1"></a></p>
-<div class="math notranslate nohighlight">
-\[
-Q=f(S) \qquad \qquad \qquad (1)
+<div class="math notranslate nohighlight" id="equation-eq-1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-1" title="Permalink to this equation">#</a></span>\[
+  Q = f(S)
 \]</div>
 <p>it is assumed that <span class="math notranslate nohighlight">\(f\)</span> is a strictly monotonically increasing function (i.e.~no hysteresis), that all <span class="math notranslate nohighlight">\(Q\)</span> originates from storage and that flow routes (e.g. groundwater flow, macropore flow, overland flow) are only related to catchment storage and not to rainfall intensity.</p>
 <p>Under these assumptions the sensitivity of <span class="math notranslate nohighlight">\(Q\)</span> to changes in <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(f'(S)\)</span>, is expressed solely as a function of <span class="math notranslate nohighlight">\(Q\)</span> through the so-called discharge sensitivity function <span class="math notranslate nohighlight">\(g(Q)\)</span>:</p>
-<p><a id="eq2"></a></p>
-<div class="math notranslate nohighlight">
-\[
-g(Q) = \frac{\mathrm{d}Q}{\mathrm{d}S}\ \qquad \qquad \qquad (2)
+<div class="math notranslate nohighlight" id="equation-eq-2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-2" title="Permalink to this equation">#</a></span>\[
+ g(Q) = \frac{\mathrm{d}Q}{\mathrm{d}S}\ 
 \]</div>
 <p>This function expresses how sensitive discharge is to changes in catchment storage, or how much discharge will change when storage changes. When the numerator and denominator of the right-hand side are both divided by <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{d}S/\mathrm{d}t\)</span> is replaced with the other terms of the water budget equation (<span class="math notranslate nohighlight">\(P - ET - Q\)</span>), the change of discharge over time can be computed as</p>
-<p><a id="eq3"></a></p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q)~(P-ET-Q)\  \qquad \qquad \qquad (3)
+<div class="math notranslate nohighlight" id="equation-eq2-3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-eq2-3" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q)~(P-ET-Q)\ 
 \]</div>
 <p>This implies that at a given <em>initial storage</em>, a certain change in storage (caused by <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span> or <span class="math notranslate nohighlight">\(Q\)</span>) should always lead to the same discharge response, both in timing and magnitude.</p>
 <p>When <span class="math notranslate nohighlight">\(P=0\)</span> and <span class="math notranslate nohighlight">\(ET=0\)</span> (for instance during night-time hours), the sensitivity function <span class="math notranslate nohighlight">\(g(Q)\)</span> can be obtained from data by plotting the recession rate <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> against <span class="math notranslate nohighlight">\(Q\)</span>. In several studies power law relations between <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> have been found (e.g. Brutsaert and Nieber, 1977):</p>
-<p><a id="eq4"></a>
-$<span class="math notranslate nohighlight">\(
--\frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q) \cdot Q = a \cdot Q^{b} \ , \qquad \qquad \qquad (4)
-\)</span>$</p>
-<p>where <span class="math notranslate nohighlight">\(b=1\)</span> corresponds to a linear reservoir. In case of a linear reservoir, the coefficient <span class="math notranslate nohighlight">\(a\)</span> is often replaced by <span class="math notranslate nohighlight">\(1/k\)</span>. In this practical we will use the letters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for nonlinear reservoirs and <span class="math notranslate nohighlight">\(k\)</span> for linear reservoirs. To obtain recession coefficients <span class="math notranslate nohighlight">\(a\)</span> (or <span class="math notranslate nohighlight">\(k\)</span>) and <span class="math notranslate nohighlight">\(b\)</span>, you will use three techniques: two types of recession analysis <a class="reference internal" href="recession_practical.html#recession-analysis"><span class="std std-ref">Sec. 3.3.2</span></a> and hydrograph fitting <a class="reference internal" href="recession_practical.html#rainfall-runoff-modelling"><span class="std std-ref">Sec. 3.3.4</span></a>.</p>
-<p>To simulate the streamflow hydrograph, substitute <span class="math notranslate nohighlight">\(g(Q)\)</span> from <a class="reference internal" href="#"><span class="xref myst">eq. 4</span></a> (<span class="math notranslate nohighlight">\(a  Q^{b-1}\)</span>) in <a class="reference internal" href="#eq3"><span class="xref myst">eq. 3</span></a>:</p>
-<p><a id="eq5"></a></p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}Q}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot ( P-ET-Q )\ . \qquad \qquad \qquad (5)
+<div class="math notranslate nohighlight" id="equation-eq2-4">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-eq2-4" title="Permalink to this equation">#</a></span>\[
+ -\frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q) \cdot Q = a \cdot Q^{b} \ ,
 \]</div>
-<p>Because this equation can lead to numerical instabilities when integrated, eq.(\ref{eq:modellin}) is solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>:</p>
-<p><a id="eq6"></a></p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}(\ln Q)}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot  \left(\frac{P-ET}{Q}-1 \right)\ . \qquad \qquad \qquad (6)
+<p>where <span class="math notranslate nohighlight">\(b=1\)</span> corresponds to a linear reservoir. In case of a linear reservoir, the coefficient <span class="math notranslate nohighlight">\(a\)</span> is often replaced by <span class="math notranslate nohighlight">\(1/k\)</span>. In this practical we will use the letters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for nonlinear reservoirs and <span class="math notranslate nohighlight">\(k\)</span> for linear reservoirs. To obtain recession coefficients <span class="math notranslate nohighlight">\(a\)</span> (or <span class="math notranslate nohighlight">\(k\)</span>) and <span class="math notranslate nohighlight">\(b\)</span>, you will use three techniques: two types of recession analysis <a class="reference internal" href="recession_practical.html#recession-analysis"><span class="std std-ref">Sec. 3.3.2</span></a> and hydrograph fitting <a class="reference internal" href="recession_practical.html#rainfall-runoff-modelling"><span class="std std-ref">Sec. 3.3.4</span></a>.</p>
+<p>To simulate the streamflow hydrograph, substitute <span class="math notranslate nohighlight">\(g(Q)\)</span> from <a class="reference internal" href="#equation-eq2-4">(3.4)</a> (<span class="math notranslate nohighlight">\(a  Q^{b-1}\)</span>) in <a class="reference internal" href="#equation-eq2-3">(3.3)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq2-5">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-eq2-5" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}Q}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot ( P-ET-Q )\ . 
+\]</div>
+<p>Because this equation can lead to numerical instabilities when integrated, <a class="reference internal" href="#equation-eq2-5">(3.5)</a> is solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq2-6">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-eq2-6" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}(\ln Q)}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot  \left(\frac{P-ET}{Q}-1 \right)\ 
 \]</div>
 </ol>
 </p>

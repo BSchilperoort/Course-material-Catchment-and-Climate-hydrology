@@ -366,6 +366,32 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.3.3. DEM analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.3.3.1. Read data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.3.3.2. Channel network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.3.3.3. Channel network ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.3.3.4. Drainage density and hillslope length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.3.3.5. Distance to outlet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.3.3.6. Channel width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.3.3.7. Channel travel time distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.3.4.1. Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.3.4.2. Channel travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.3.4.3. Hillslope width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.3.4.4. Channel and hillslope travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.3.4.5. Flow routes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.3.5. TOPMODEL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.3.5.1. Topographic index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.3.5.2. Running TOPMODEL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.3.5.3. Effect of parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.3.5.4. Effect of initial conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.3.5.5. Final assignment</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -392,8 +418,12 @@ document.write(`
 <section id="dem">
 <h3><span class="section-number">6.3.2.1. </span>DEM<a class="headerlink" href="#dem" title="Permalink to this heading">#</a></h3>
 <p>The DEM you will use today was obtained by the Shuttle Radar Topography Mission (SRTM) which generated a near global elevation map. For Europe the resolution of this dataset is about 90 meter and can be downloaded from the internet (<a class="reference external" href="http://www2.jpl.nasa.gov/srtm/">http://www2.jpl.nasa.gov/srtm/</a>). Your DEM file is called <code class="docutils literal notranslate"><span class="pre">ourthe_90m.asc</span></code> and is located in the folder <code class="docutils literal notranslate"><span class="pre">DEM</span></code>.</p>
-<p><img alt="a figure" src="images/topomap.png" /></p>
-<p>Figure 1: (Location of the Ardennes and a 200x200-km box with a topographic map, the main channel network (black), the Ourthe catchment boundary (white), the catchment outlet (<span class="math notranslate nohighlight">\(\blacktriangle\)</span>), the meteorological station (<span class="math notranslate nohighlight">\(\circ\)</span>), rain gauges (+) and weather radar (<span class="math notranslate nohighlight">\(\bullet\)</span>).)</p>
+<figure class="align-center" id="topomap">
+<a class="reference internal image-reference" href="../_images/topomap.png"><img alt="../_images/topomap.png" src="../_images/topomap.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">(Location of the Ardennes and a 200x200-km box with a topographic map, the main channel network (black), the Ourthe catchment boundary (white), the catchment outlet (<span class="math notranslate nohighlight">\(\blacktriangle\)</span>), the meteorological station (<span class="math notranslate nohighlight">\(\circ\)</span>), rain gauges (+) and weather radar (<span class="math notranslate nohighlight">\(\bullet\)</span>).)</span><a class="headerlink" href="#topomap" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <hr class="docutils" />
 <p>Open this file in Notepad and find out how this ASCII file is set up. What do the numbers in the big matrix mean?</p>
 <details>
@@ -416,9 +446,13 @@ document.write(`
 <section id="flow-direction-slope-and-contributing-area">
 <h4>Flow direction, slope and contributing area<a class="headerlink" href="#flow-direction-slope-and-contributing-area" title="Permalink to this heading">#</a></h4>
 <p>There are many ways to compute flow directions. In this practical the simplest and oldest method will be applied: the D8 flow direction method. The elevation of each pixel is compared to the elevations of the 8~neighbouring cells and water will flow in the direction of the steepest descent:</p>
-<p><img alt="a figure" src="images/DEM_example.png" /></p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/DEM.png"><img alt="../_images/DEM.png" src="../_images/DEM.png" style="width: 70%;" /></a>
+</figure>
 <p>The flow directions are represented by numbers:</p>
-<p><img alt="a figure" src="images/D8_flow_directions.png" /></p>
+<figure class="align-center" id="d8-flow-directions">
+<a class="reference internal image-reference" href="../_images/D8_flow_directions.png"><img alt="../_images/D8_flow_directions.png" src="../_images/D8_flow_directions.png" style="width: 70%;" /></a>
+</figure>
 <p>Boundary pixels for which no downstream direction could be obtained receive the value of <span class="math notranslate nohighlight">\(-1\)</span>. The output of this step was saved in the file <code class="docutils literal notranslate"><span class="pre">ourthe_90mp.asc</span></code>. Once these directions have been determined, TAUDEM immediately generates the file <code class="docutils literal notranslate"><span class="pre">ourthe_90msd8.asc</span></code>, containing the local slopes for all pixels. From the flow direction map, the upstream area for each pixel can be computed. TAUDEM starts at the highest points of the DEM and moves downward. In <code class="docutils literal notranslate"><span class="pre">ourthe_90mad8.asc</span></code> the number of upstream pixels is given for each pixel.</p>
 <hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">ourthe_90mp.asc</span></code>, <code class="docutils literal notranslate"><span class="pre">ourthe_90msd8.asc</span></code> and <code class="docutils literal notranslate"><span class="pre">ourthe_90mad8.asc</span></code> in Notepad and try to understand what the numbers mean.</p>
@@ -430,8 +464,563 @@ document.write(`
 <p>After these preprocessing steps, R can be used for spatial hydrological analyses. Open RStudio and load the script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code>. Set the working directory and run the part under <code class="docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">started</span></code>.</p>
 <p>The folder <code class="docutils literal notranslate"><span class="pre">R_scripts</span></code> contains more scripts with functions used in the main R script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code> (you don’t have to open these scripts now):</p>
 <ul class="simple">
-<li><p>g</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SetGeo.R</span></code> gives pixel size and extent of the DEM.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nbrtable.R</span></code> Within R a DEM matrix is internally represented as a vector. Therefore, for every pixel within the grid this function calculates the vector index value for the 8 neighbour points.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">downnbr.R</span></code> gives the vector index number of a pixel’s downstream neighbour based on the D8 flow direction method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mainbasin.R</span></code> gives the upstream area for a given pixel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetNewCoordinates.R</span></code> zooms in to the catchment when the catchment area covers a small part of the DEM.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowdistance.R</span></code> calculates the distance to the channel network for each pixel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plotflowdistance.R</span></code> draws a map of the distance to the channel for each pixel obtained by <code class="docutils literal notranslate"><span class="pre">flowdistance.R</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channeldistance.R</span></code> gives the distance to the outlet (measured along the channel) for each pixel (given a certain channel network).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channelpixelsize.R</span></code> computes for each channel pixel how many metres of channel it contains.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strahler_order.R</span></code> gives Strahler order numbers for each channel link.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shreve_order.R</span></code> gives Shreve order numbers for each channel link.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TOPMODEL.R</span></code> runs the hydrological model TOPMODEL.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NSeff.R</span></code> computes the Nash-Sutcliffe efficiency.</p></li>
 </ul>
+<p>Run the part under ‘’Extra functions’’. You then load all extra functions. For example, when you run the line source(<code class="docutils literal notranslate"><span class="pre">&quot;R_scripts/SetGeo.R&quot;</span></code>) in the <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code>-script, R runs the whole <code class="docutils literal notranslate"><span class="pre">SetGeo.R</span></code>-script at once in the background. Because the <code class="docutils literal notranslate"><span class="pre">SetGeo.R</span></code>-script contains the definition of the function <code class="docutils literal notranslate"><span class="pre">SetGeo</span></code>, this function with the argument <code class="docutils literal notranslate"><span class="pre">A</span></code> appears in the workspace window.</p>
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="dem-analyses">
+<h2><span class="section-number">6.3.3. </span>DEM analyses<a class="headerlink" href="#dem-analyses" title="Permalink to this heading">#</a></h2>
+<section id="read-data">
+<h3><span class="section-number">6.3.3.1. </span>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">#</a></h3>
+<p>Next, run the part of the script under “Read Data”. This part of the script generates a map with the pit filled DEM. Check if your figure is similar to Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">topomape</span></code>.</p>
+<p>Read the part of the script under “Catchment Area”. If you run this part in R, only the part of the DEM that lies upstream of Tabreux is selected. This part belongs to the Upper Ourthe catchment.</p>
+<hr class="docutils" />
+<p>Click on <code class="docutils literal notranslate"><span class="pre">basin</span></code> in the workspace window. What do the TRUE and FALSE mean?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>TRUE: Inside the catchment.
+FALSE: Outside the catchment.
+</span></p>
+</details>
+<hr class="docutils" />
+<p>Make sure you understand what happens in the line <code class="docutils literal notranslate"><span class="pre">Elevation[basin</span> <span class="pre">==</span> <span class="pre">FALSE]</span> <span class="pre">=</span> <span class="pre">NA</span></code>. If you don’t know what the square brackets do, reread Section 11.1 of the (very) short introduction to R (which can be found on the R website):
+<code class="docutils literal notranslate"><span class="pre">cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf</span></code>.</p>
+<hr class="docutils" />
+<p>How many pixels belong to the Ourthe catchment and what is the corresponding area?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The total number of pixels corresponding to the catchment is 199886, which corresponds to 1619 km<sup>2</sup>
+</span></p>
+</details>
+</section>
+<hr class="docutils" />
+<section id="channel-network">
+<h3><span class="section-number">6.3.3.2. </span>Channel network<a class="headerlink" href="#channel-network" title="Permalink to this heading">#</a></h3>
+<p>Because you do not have information on where the channels are (which is almost always the case), you will predict the location of the channels with the DEM. Assume that a river branch will develop when the upstream area exceeds a certain value representing the soil’s flow capacity; excess water will start to flow overland instead, creating a channel. Assume that for a pixel to be part of the channel network, the upstream area has to be equal to or exceed 0.1~<span class="math notranslate nohighlight">\(\text{km}^2\)</span> (<span class="math notranslate nohighlight">\(A_c\)</span>).</p>
+<p>Run the part of the script under “Channel Network”. This will generate the channel network. Click on “Channel” in the workspace window to see what this matrix looks like.</p>
+<hr class="docutils" />
+<p>How many pixels are part of the channel network?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>29177</p>
+  </span>
+</details>
+<p>\How many pixels are part of the network when you change the upstream area to 0.03, 0.3 and 1 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>0.03 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>:         70973</p>
+<p>0.3 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>:          17288</p>
+<p>1 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>:            10477</p>
+</span>
+</details>
+<p>What is the relation between channel density and <span class="math notranslate nohighlight">\(A_c\)</span>?</p>
+<figure class="align-center" id="question3">
+<a class="reference internal image-reference" href="../_images/Question3.png"><img alt="../_images/Question3.png" src="../_images/Question3.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The channel density decreases when you increase Ac (the upstream area which should be exceeded in order to form a channel).</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>Set the upstream area to 0.1 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span> for the next assignments.</p>
+</section>
+<hr class="docutils" />
+<section id="channel-network-ordering">
+<h3><span class="section-number">6.3.3.3. </span>Channel network ordering<a class="headerlink" href="#channel-network-ordering" title="Permalink to this heading">#</a></h3>
+<p>The shape of channel network can be analyzed with several ordering systems. Today we will focus on the Strahler (left) and Shreve (right) ordering systems:</p>
+<figure class="align-center" id="shreve">
+<a class="reference internal image-reference" href="../_images/Shreve.png"><img alt="../_images/Shreve.png" src="../_images/Shreve.png" style="width: 70%;" /></a>
+</figure>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">shreve</span></code> to calculate the Shreve order for each channel pixel.</p>
+<hr class="docutils" />
+<p>What is the maximum Shreve value? (Look at the arguments of the function <code class="docutils literal notranslate"><span class="pre">max</span></code> to find out how to exclude non-channel pixels in the computation.)</p>
+<figure class="align-center" id="question11">
+<a class="reference internal image-reference" href="../_images/Question11.png"><img alt="../_images/Question11.png" src="../_images/Question11.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>4183</p>
+</span>
+</details>
+<p>What does this maximum represent?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>This is the number of first order channels (and sources).</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>Do the same for the Strahler order.</p>
+<hr class="docutils" />
+<p>What is the maximum Strahler number?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+ 7  
+</span>
+</details>
+<p>How does this value change when you increase <span class="math notranslate nohighlight">\(A_c\)</span>; the upstream area which defines the channel network? (what you did in <a class="reference internal" href="#channel-network"><span class="xref myst">Section 6.3.3.2</span></a>)</p>
+<figure class="align-center" id="question12">
+<a class="reference internal image-reference" href="../_images/Question12.png"><img alt="../_images/Question12.png" src="../_images/Question12.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>When the upstream area increases, the Strahler number will decrease,
+because there will be fewer branches.</p>
+</span>
+</details>
+</section>
+<section id="drainage-density-and-hillslope-length">
+<h3><span class="section-number">6.3.3.4. </span>Drainage density and hillslope length<a class="headerlink" href="#drainage-density-and-hillslope-length" title="Permalink to this heading">#</a></h3>
+<p>The function <code class="docutils literal notranslate"><span class="pre">channelpixelsize</span></code> calculates for every channel pixel how many metres of channel it contains.</p>
+<hr class="docutils" />
+<p>Click on <code class="docutils literal notranslate"><span class="pre">Channel_Length_Per_Pixel</span></code> in the workspace window. What do NA, 90 and 127 tell you about the flow direction?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>NA:  There is no river on this pixel</p>
+<p>90:  The river flows horizontally or vertically through this pixel.</p>
+<p>127: The river flows diagonally through this pixel.</p>
+</span>
+</details>
+<p>Where do the numbers 90 and 127 come from?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Size of the pixel is 90 m and <span class="math notranslate nohighlight">\(127 \sim \sqrt(90^2 + 90^2)\)</span></p>
+</span>
+</details>
+<hr class="docutils" />
+<p>A rectangular valley with a channel in the middle and the local water divide at the edges, can be characterized by several measures: the channel length <span class="math notranslate nohighlight">\(L_c\)</span>, the area <span class="math notranslate nohighlight">\(A\)</span>, the hillslope length <span class="math notranslate nohighlight">\(L_h\)</span> and the drainage density <span class="math notranslate nohighlight">\(d\)</span>:</p>
+<figure class="align-center" id="hillslope">
+<a class="reference internal image-reference" href="../_images/hillslope.png"><img alt="../_images/hillslope.png" src="../_images/hillslope.png" style="width: 70%;" /></a>
+</figure>
+<p>Give the equation to compute the area of the valley in the figure above from <span class="math notranslate nohighlight">\(L_h\)</span> and <span class="math notranslate nohighlight">\(L_c\)</span>.?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(A\)</span> = <span class="math notranslate nohighlight">\(L_c\cdot2L_h\)</span></p>
+</span>
+</details>
+<p>Give the equation to compute the drainage density from area <span class="math notranslate nohighlight">\(A\)</span> and channel length <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(d\)</span>=<span class="math notranslate nohighlight">\(L_c/A\)</span></p>
+</span>
+</details>
+<p>Give the equation to compute the drainage density from the hillslope length <span class="math notranslate nohighlight">\(L_h\)</span>.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(d\)</span>=<span class="math notranslate nohighlight">\(1/(2L_h)\)</span></p>
+</span>
+</details>
+<p>Give the equation to compute <span class="math notranslate nohighlight">\(L_h\)</span> from <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(L_h\)</span>=<span class="math notranslate nohighlight">\(1/(2d)\)</span></p>
+</span>
+</details>
+<p>What is the unit of drainage density?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Drainage density is defined as the total channel length over the total area (<span class="math notranslate nohighlight">\(L_c/A\)</span>). The unit is m divided by <span class="math notranslate nohighlight">\(\mathrm{m}^2\)</span>, so <span class="math notranslate nohighlight">\(\mathrm{m}^{-1}\)</span>.</p>
+</span>
+</details>
+<p>Compute the drainage density of the Ourthe catchment (for <span class="math notranslate nohighlight">\(A_c=0.1\)</span>)</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p><span class="math notranslate nohighlight">\(d\)</span>=<span class="math notranslate nohighlight">\(0.002\)</span>~ <span class="math notranslate nohighlight">\(\mathrm{m}^{-1}\)</span></p>
+</span>
+</details>
+<p>What is the average hillslope length?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>262 m. Of course the Ourthe catchment is not a collection of rectangular sub-catchments, but this method does give an idea of the average hillslope length.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="distance-to-outlet">
+<h3><span class="section-number">6.3.3.5. </span>Distance to outlet<a class="headerlink" href="#distance-to-outlet" title="Permalink to this heading">#</a></h3>
+<p>Compute for each pixel the distance to the outlet. This is preprogrammed in <code class="docutils literal notranslate"><span class="pre">channeldistance</span></code>.</p>
+<hr class="docutils" />
+<p>What is the distance from the most upstream channel pixel to the outlet?</p>
+<figure class="align-center" id="question7">
+<a class="reference internal image-reference" href="../_images/Question7.png"><img alt="../_images/Question7.png" src="../_images/Question7.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>115 km</p>
+</span>
+</details>
+<p>Plot the average channel elevation versus distance to the outlet. What do the slopes of the curves show?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The slope of the channel bed.</p>
+</span>
+</details>
+<p>What can you say about the relation between the slopes of the curves and the distance to the outlet?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The slope of the channel bed.</p>
+</span>
+</details>
+<figure class="align-center" id="question8">
+<a class="reference internal image-reference" href="../_images/Question8.png"><img alt="../_images/Question8.png" src="../_images/Question8.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Most of the lower order channel links (upstream channel links) have a steeper slope than the higher order ones. The result of this is that close to the sources, the water flows more quickly (when all other factors such as bed roughness and vertical cross-section of the river are considered equal, which is of course not the case as the downstream stretches of river are wider and deeper).</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="channel-width-function">
+<h3><span class="section-number">6.3.3.6. </span>Channel width function<a class="headerlink" href="#channel-width-function" title="Permalink to this heading">#</a></h3>
+<p>From the channel network you can compute the network width function. This function gives the fraction of channel pixels at a given distance from the outlet. Plot the width function.</p>
+<hr class="docutils" />
+<p>Explain the shape of the width function with the shapes of the channel network and catchment.</p>
+<figure class="align-center" id="question13">
+<a class="reference internal image-reference" href="../_images/Question13.png"><img alt="../_images/Question13.png" src="../_images/Question13.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Close to the outlet (20-40~km) there are many channels, at about 70~km from the outlet there are few channels and between 80 and 100~km from the outlet there are again more channels. From the catchment maps, you can see that the Ourthe catchment has a narrow part in the middle, which causes the low number of links (channel pixels) in the width function.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="channel-travel-time-distribution">
+<h3><span class="section-number">6.3.3.7. </span>Channel travel time distribution<a class="headerlink" href="#channel-travel-time-distribution" title="Permalink to this heading">#</a></h3>
+<p>The velocity of the water in the river is generally between 0.3 and 3.0 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>. Here a value of 0.8 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span> is assumed for every stretch of river. With the flow velocity you can convert the distance-to-outlet-map into a channel travel time map.</p>
+<hr class="docutils" />
+<p>What can you say about the pattern and variability in flow times and their relation to the shape of the catchment and the channel network?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The spatial pattern in the channel travel time map is the same as in the distance-to-outlet-map. To make the travel-time-map, you multiplied the distance-to-outlet at every pixel with a constant, so nothing happened to the spatial distribution.</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>Different channel velocities lead to different travel time distributions. Compute the maximum and median travel time with different channel velocities ranging from <span class="math notranslate nohighlight">\(0.3\)</span> to <span class="math notranslate nohighlight">\(3.0\)</span> m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span> and plot the results (channel velocity on the <span class="math notranslate nohighlight">\(x\)</span>-axis and travel time on the <span class="math notranslate nohighlight">\(y\)</span>-axis).</p>
+<hr class="docutils" />
+<p>What is the relation between flow velocity and maximum channel travel time?</p>
+<figure class="align-center" id="question9">
+<a class="reference internal image-reference" href="../_images/Question9.png"><img alt="../_images/Question9.png" src="../_images/Question9.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>When the channel velocity doubles, the maximum travel time is halved.</p>
+</span>
+</details>
+<p>If all rain would fall on the channel network directly, what do the maximum and median travel time then represent?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The time necessary to discharge all or 50% of the water out of the catchment.</p>
+</span>
+</details>
+<hr class="docutils" />
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="rainfall-runoff-modelling">
+<h2><span class="section-number">6.3.4. </span>Rainfall-runoff modelling<a class="headerlink" href="#rainfall-runoff-modelling" title="Permalink to this heading">#</a></h2>
+<section id="time-series">
+<h3><span class="section-number">6.3.4.1. </span>Time series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h3>
+<p>Before you start modelling, you should get a better feeling of the water balance terms in the Ourthe catchment. The file <code class="docutils literal notranslate"><span class="pre">PEQ_Ourthe_2002_2003.txt</span></code> in the folder <code class="docutils literal notranslate"><span class="pre">Data</span></code> contains 2 years of basin averaged hourly precipitation [<span class="math notranslate nohighlight">\(mm\)</span> <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span> ], potential evaporation [<span class="math notranslate nohighlight">\(mm\)</span> <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span>] and discharge [<span class="math notranslate nohighlight">\(\mathrm{m}^{3}\)</span> <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>] data. Use the year 2002 for calibration and Feb.-Dec. 2003 for validation. The discharge data of January 2003 are removed - you will predict these in the final assignment.</p>
+<p>Comparing fluxes is easier when they have the same units. Use the catchment area to convert the discharge to mm <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span> and plot the time series. To remove the hourly variability, the data can be averaged over monthly periods. This is preprogrammed in the script. In addition, the <span class="math notranslate nohighlight">\(\mathrm{10}^{th}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{90}^{th}\)</span> percentiles are computed.</p>
+<hr class="docutils" />
+<p>Look at the seasonal variation to get a rough idea of the dominant fluxes during different seasons.</p>
+<figure class="align-center" id="question4">
+<a class="reference internal image-reference" href="../_images/Question4.png"><img alt="../_images/Question4.png" src="../_images/Question4.png" style="width: 70%;" /></a>
+</figure>
+<figure class="align-center" id="question5">
+<a class="reference internal image-reference" href="../_images/Question5.png"><img alt="../_images/Question5.png" src="../_images/Question5.png" style="width: 70%;" /></a>
+</figure>
+<p>The models in <a class="reference internal" href="#rainfall-runoff-modelling"><span class="xref myst">Chapter 6.3.4</span></a> need input, but cannot deal with negative input (<span class="math notranslate nohighlight">\(ET&gt;P\)</span>), because they do not contain stores from which water can be removed (they use transfer functions instead of reservoirs). You could just use <span class="math notranslate nohighlight">\(P\)</span> as input, but of course part of the precipitation evaporates. As a quick fix, a factor <span class="math notranslate nohighlight">\(f\)</span> is introduced to close the water balance over 2002 to account for evapotranspiration:</p>
+<div class="math notranslate nohighlight" id="equation-equation-1">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-equation-1" title="Permalink to this equation">#</a></span>\[
+  f \cdot \Sigma P - \Sigma Q = 0
+\]</div>
+<p>Hourly values of effective precipitation are computed as</p>
+<div class="math notranslate nohighlight" id="equation-equation-2">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-equation-2" title="Permalink to this equation">#</a></span>\[
+  P_\mathrm{eff} = f \cdot P
+\]</div>
+</section>
+<section id="channel-travel-time-distribution-model">
+<h3><span class="section-number">6.3.4.2. </span>Channel travel time distribution model<a class="headerlink" href="#channel-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
+<p>From the channel width function in <a class="reference internal" href="#channel-width-function"><span class="xref myst">section 6.3.3.6</span></a> you can make a simple rainfall-runoff model. In this model you assume that all precipitation enters the channel network directly.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">Q_geomorph_channel</span></code> converts the width function to a travel time distribution model with a convolution integral. Try to understand the different aspects of this function (look in the file <code class="docutils literal notranslate"><span class="pre">Q_geomorph_channel.R</span></code>).</p>
+<hr class="docutils" />
+<p>How does the simulated discharge compare to the observed discharge? What happens if you change the velocity?</p>
+<figure class="align-center" id="question14">
+<a class="reference internal image-reference" href="../_images/Question14.png"><img alt="../_images/Question14.png" src="../_images/Question14.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>With a velocity of 0.8 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span> the response is too flashy, while for very slow values (0.008 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>) there is no clear response of runoff to rainfall</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="hillslope-width-function">
+<h3><span class="section-number">6.3.4.3. </span>Hillslope width function<a class="headerlink" href="#hillslope-width-function" title="Permalink to this heading">#</a></h3>
+<p>Of course, the assumption that all precipitation immediately enters the channel network is not valid: the simulated discharge response is too fast. This illustrates that the response of a catchment is not only characterized by the channel network but also by the soil, slope and vegetation on the hillslopes.</p>
+<hr class="docutils" />
+<p>Compute for each pixel the distance to the nearest channel, plot the map and make a histogram: the hillslope width function.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<figure class="align-center" id="question15">
+<a class="reference internal image-reference" href="../_images/Question15.png"><img alt="../_images/Question15.png" src="../_images/Question15.png" style="width: 70%;" /></a>
+</figure>
+</span>
+</details>
+<p>What is the average distance to the channel?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>250 m</p>
+</span>
+</details>
+<p>How does the average distance to the channel compare to the average hillslope length you computed in <a class="reference internal" href="#drainage-density-and-hillslope-length"><span class="xref myst">Section 6.3.3.4.</span></a>?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>They compare quite well.</p>
+</span>
+</details>
+<p>What information does this width function give?</p>
+<figure class="align-center" id="question15-2">
+<a class="reference internal image-reference" href="../_images/Question15_2.png"><img alt="../_images/Question15_2.png" src="../_images/Question15_2.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Most pixels are close to a channel and the number of pixels at a certain distance from a channel decreases with that distance to the channel. There are few pixels more than 100~m away from the nearest channel.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="channel-and-hillslope-travel-time-distribution-model">
+<h3><span class="section-number">6.3.4.4. </span>Channel and hillslope travel time distribution model<a class="headerlink" href="#channel-and-hillslope-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
+<p>A catchment’s travel time distribution is determined by the time a water droplet spends in both the hillslope and the channel network. You already computed the channel travel time distribution from the channel width function (<a class="reference internal" href="#channel-travel-time-distribution-model"><span class="xref myst">Section 6.3.4.2</span></a>). In the same way, you can make a hillslope travel time distribution from the histogram of the distances to the nearest channel. Just as in the channel, we assume that the flow velocity in the hillslope is constant.</p>
+<hr class="docutils" />
+<p>Why is the assumption of a constant (no variation in time) flow velocity in the hillslope not realistic?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Water travels overland, through macropores and the unsaturated and saturated zone matrix. Between these flow routes, velocity can easily differ by a factor 100. The distribution of water over these flowpaths varies temporally.</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>The functions <code class="docutils literal notranslate"><span class="pre">Q_geomorph_hillslope</span></code> and <code class="docutils literal notranslate"><span class="pre">Q_hillslope_parts</span></code> have a similar set-up as the previously used function <code class="docutils literal notranslate"><span class="pre">Q_geomorph_channel</span></code>. As a first estimate, the effective <span class="math notranslate nohighlight">\(\mathrm{}^{*}\)</span> velocity in the hillslope is assumed to be 0.1m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span> and the channel network velocity 0.8~m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\mathrm{}^{*}\)</span> The word effective is added because the actual flow velocity of the water particles through the soil is much slower than the response caused by pressure changes.</p>
+<hr class="docutils" />
+<p>During which part of the year do the simulated discharge peaks fit the observed ones well? Why?</p>
+<figure class="align-center" id="question16">
+<a class="reference internal image-reference" href="../_images/Question16.png"><img alt="../_images/Question16.png" src="../_images/Question16.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The simulated model performs best during the winter period, but, because the amount of evaporation was assumed to a fixed percentage of the amount of precipitation, even during the winter year the response is underestimated.</p>
+</span>
+</details>
+<p>What happens to the baseflow? Why?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Baseflow results from very slow runoff processes. Because only one value for the flow through the hillslope is taken into account, baseflow is not simulated. In general, it can be expected that baseflow results from much smaller velocities in the hillslope than modelled here.</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>Try different values for the effective hillslope velocity.</p>
+<hr class="docutils" />
+<p>Which values for the effective hillslope velocity yield good results in the winter period and which in the summer?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Many values possible.</p>
+</span>
+</details>
+<p>You probably found that in winter the hillslope velocity is higher than in in summer. Explain this with the dominant processes that occur during winter.</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>As mentioned in the previous question, this model did not take the yearly behaviour in the observed evaporation into account. Therefore, the effective precipitation in the winter (summer) period is too small (large). For very small hillslope velocity values, the summer response is fairly well simulated.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="flow-routes">
+<h3><span class="section-number">6.3.4.5. </span>Flow routes<a class="headerlink" href="#flow-routes" title="Permalink to this heading">#</a></h3>
+<p>The route a water droplet takes through the hillslope to the channel depends on many factors, such as soil type, presence of macropores, vegetation and catchment wetness. Because many of these factors change during the year, the flow routes change, and therefore the travel times change.</p>
+<p>Make the model a bit more complex by assuming that the hillslope can be modelled with three different hillslope velocity values, <span class="math notranslate nohighlight">\(v=10^{-3}\)</span>, <span class="math notranslate nohighlight">\(v=10^{-5}\)</span> and <span class="math notranslate nohighlight">\(v=10^{-7}~\mathrm{m\,s^{-1}}\)</span>, indicating the fast, intermediate and slow hillslope response. Run the model with the defined fractions for fast, medium and slow response velocities.</p>
+<hr class="docutils" />
+<p>Play around with the fractions of the different velocities. Which fractions did you get for which part of the year?</p>
+<figure class="align-center" id="question17">
+<a class="reference internal image-reference" href="../_images/Question17.png"><img alt="../_images/Question17.png" src="../_images/Question17.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Many answers possible.</p>
+</span>
+</details>
+<p>For which part of the year were you able to obtain proper discharge estimates?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Probably in winter.</p>
+</span>
+</details>
+<hr class="docutils" />
+<div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+</section>
+</section>
+<section id="topmodel">
+<h2><span class="section-number">6.3.5. </span>TOPMODEL<a class="headerlink" href="#topmodel" title="Permalink to this heading">#</a></h2>
+<p>As you probably noticed, the simple model was only able to simulate a proper response behaviour for some events. It is very difficult to simulate the hydrological response of a catchment with a few fixed velocities. It is impossible to grasp the temporal variations in the complex hydrological interactions between vegetation and the unsaturated and saturated zones using this simple approach.</p>
+<p>The next step is to use a more complex (but still relatively simple) hydrological model: TOPMODEL. TOPMODEL is a well-known model based on the topographic properties of the catchment.</p>
+<section id="topographic-index">
+<h3><span class="section-number">6.3.5.1. </span>Topographic index<a class="headerlink" href="#topographic-index" title="Permalink to this heading">#</a></h3>
+<p>The main assumption behind TOPMODEL is that the response behaviour of a given pixel can be estimated by its topographic index value <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-equation3">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-equation3" title="Permalink to this equation">#</a></span>\[
+  \lambda = \ln \left( \frac{a}{\tan \beta}\right)\
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the upstream area per unit contour length (pixel length) [m] and <span class="math notranslate nohighlight">\(\beta\)</span> the local slope [<span class="math notranslate nohighlight">\(^\circ\)</span>]. More information on TOPMODEL is given in the reader.</p>
+<p>Use the script to compute and plot the topographic index for each pixel.</p>
+<hr class="docutils" />
+<p>How are the topographic indices distributed?</p>
+<figure class="align-center" id="question18">
+<a class="reference internal image-reference" href="../_images/Question18.png"><img alt="../_images/Question18.png" src="../_images/Question18.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>Most cells have a small topographic index value, indication either a small upstream area or large local slope. Both of these characteristics can expected to be observed further away from the channel sections.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="running-topmodel">
+<h3><span class="section-number">6.3.5.2. </span>Running TOPMODEL<a class="headerlink" href="#running-topmodel" title="Permalink to this heading">#</a></h3>
+<p>To run TOPMODEL, you need to specify 5 parameters and 2 initial conditions.
+TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter sets are given in <code class="docutils literal notranslate"><span class="pre">TOPMODEL_Parameters.dat</span></code>. The initial conditions are the unsaturated zone deficit (<code class="docutils literal notranslate"><span class="pre">Dbar</span></code>) and  root zone deficit (<code class="docutils literal notranslate"><span class="pre">Drzone</span></code>), both effective catchment values.</p>
+<p>First, use only the first parameter set (first row in <code class="docutils literal notranslate"><span class="pre">TOPMODEL_Parameters.dat</span></code>). Run TOPMODEL and simulate the discharge response. Choose the period yourself.</p>
+<hr class="docutils" />
+<p>Describe the performance of the model. When did the model succeed and when and how did it fail?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>TOPMODEL is quite well able to simulate the hydrologic response of the Ourthe catchment. However looking more closely, the simulated discharge is too large (small) at the beginning (end) of the winter. These latter properties are a consequence of the assumption of a fixed upstream recharge area, which is practice varies over time.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="effect-of-parameters">
+<h3><span class="section-number">6.3.5.3. </span>Effect of parameters<a class="headerlink" href="#effect-of-parameters" title="Permalink to this heading">#</a></h3>
+<p>To analyze the effect of uncertainty in the parameter values, run the model with all 20 parameter sets and make an ensemble of the simulations. This may take a few minutes.</p>
+<hr class="docutils" />
+<p>When is the parameter uncertainty large? In other words, when is the spread of the grey lines, caused by different parameter sets, large?</p>
+<figure class="align-center" id="question20">
+<a class="reference internal image-reference" href="../_images/Question20.png"><img alt="../_images/Question20.png" src="../_images/Question20.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The parameter uncertainty is especially large during the first rising limb (Oct-Nov).</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="effect-of-initial-conditions">
+<h3><span class="section-number">6.3.5.4. </span>Effect of initial conditions<a class="headerlink" href="#effect-of-initial-conditions" title="Permalink to this heading">#</a></h3>
+<p>The results show that it is especially difficult to simulate the response of the Ourthe for the first main runoff peak in November 2002. This is caused by a wrong estimation of the initial storage, given by <code class="docutils literal notranslate"><span class="pre">Dbar</span></code> and <code class="docutils literal notranslate"><span class="pre">Drzone</span></code></p>
+<p>Change the values of <code class="docutils literal notranslate"><span class="pre">Dbar</span></code> and <code class="docutils literal notranslate"><span class="pre">Drzone</span></code> and run the model again.</p>
+<hr class="docutils" />
+<p>What is the effect of the initial conditions?</p>
+<figure class="align-center" id="question21">
+<a class="reference internal image-reference" href="../_images/Question21.png"><img alt="../_images/Question21.png" src="../_images/Question21.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The initial values determine how “wet” the catchment is at the start of the modelling period. When you assume that the catchment is wetter than it really is, you will overestimate the discharge response in the beginning of the period. After a few months, the saturated zone and rootzone deficit will go down to the ``real” values, because when you start too wet, you will get more discharge and you will get a sort of equilibrium value (Dbar and Drzone have gone up and down again and the influence of the initial values becomes less important).</p>
+</span>
+</details>
+<hr class="docutils" />
+<figure class="align-center" id="question22">
+<a class="reference internal image-reference" href="../_images/Question22.png"><img alt="../_images/Question22.png" src="../_images/Question22.png" style="width: 70%;" /></a>
+</figure>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The best results are obtained from either large (small) values of the saturated zone deficit (Dbar) and small (large) the root zone deficit (Drzone). In case both would have a really large (small) deficit value, the initial storage of the Ourthe would be under (over) estimated.</p>
+</span>
+</details>
+<hr class="docutils" />
+<p>Some models use a warming-up period to compensate for bad initial conditions. For example, when you want to forecast discharge from April to September, you may start the simulations in March and neglect the output of the first month.</p>
+<hr class="docutils" />
+<p>How long would you advise the warming-up period to be for TOPMODEL in the Ourthe catchment and why?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>The effect of the initial conditions is visible for about 3.5 months. After this, the simulations with different initial conditions are similar.</p>
+</span>
+</details>
+<p>What is the relation between <code class="docutils literal notranslate"><span class="pre">Dbar</span></code> and <code class="docutils literal notranslate"><span class="pre">Drzone</span></code>?</p>
+<details>
+  <summary>Show Answer</summary>
+  <span style="color:blue">
+<p>In reality, there usually is much water in the root zone when the saturated zone is full. In the model, when you increase both, you will overestimate discharge and when you decrease both you underestimate. In the middle there is an area where you can exchange Dbar and Drzone: you can increase Dbar a little and decrease Drzone to get the same total storage leading to more or less the same discharge response and therefore the same Nash-Sutcliffe efficiency.</p>
+</span>
+</details>
+</section>
+<hr class="docutils" />
+<section id="final-assignment">
+<h3><span class="section-number">6.3.5.5. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h3>
+<p>Predict the discharge peak in January 2003 using TOPMODEL. Run TOPMODEL with different settings. You can change (1) the warming-up period, (2) parameter sets and (3) initial conditions. Collect the computed discharge from different runs as columns in a matrix to get an ensemble of forecasts, which you can plot and analyse. Follow the instructions in the script.</p>
+<p>Compute the 25th, 50th and 75th percentile of the ensemble and cut out the values of January (so 3 time series with 744 values). Save the output as a CSV file in your working directory. Open the file in Excel, copy and paste it in Google Sheets before 13:00. We will discuss the results at 13:05.</p>
 </section>
 </section>
 </section>
@@ -509,6 +1098,32 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.3.3. DEM analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.3.3.1. Read data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.3.3.2. Channel network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.3.3.3. Channel network ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.3.3.4. Drainage density and hillslope length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.3.3.5. Distance to outlet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.3.3.6. Channel width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.3.3.7. Channel travel time distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.3.4.1. Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.3.4.2. Channel travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.3.4.3. Hillslope width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.3.4.4. Channel and hillslope travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.3.4.5. Flow routes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.3.5. TOPMODEL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.3.5.1. Topographic index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.3.5.2. Running TOPMODEL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.3.5.3. Effect of parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.3.5.4. Effect of initial conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.3.5.5. Final assignment</a></li>
 </ul>
 </li>
 </ul>

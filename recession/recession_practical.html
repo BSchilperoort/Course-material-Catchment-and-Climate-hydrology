@@ -416,14 +416,14 @@ Change the working directory under “Getting Started” and run the lines in th
 <p>The most straightforward (but not necessarily the best) method to find reservoir coefficients, is to assume a linear reservoir and obtain coefficient <span class="math notranslate nohighlight">\(k\)</span> by fitting curves to individual recessions.</p>
 <p>Select <em>one</em> nice recession (one decreasing line, not a complete hydrograph) by hand. Fit a curve (in a graph with linear <span class="math notranslate nohighlight">\(y\)</span>-axis) and a line (in a graph with logarithmic <span class="math notranslate nohighlight">\(y\)</span>-axis) manually through the observed discharges by changing the value of <span class="math notranslate nohighlight">\(k\)</span>.
 Remember that when</p>
-<div class="math notranslate nohighlight">
-\[
--\frac{\mathrm{d}Q}{\mathrm{d}t} = \frac{Q}{k}\ \ , \qquad \qquad \qquad (7)
+<div class="math notranslate nohighlight" id="equation-eq2-7">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-eq2-7" title="Permalink to this equation">#</a></span>\[
+-\frac{\mathrm{d}Q}{\mathrm{d}t} = \frac{Q}{k}\ \ ,
 \]</div>
 <p>the flow out of a linear reservoir can be given by</p>
-<div class="math notranslate nohighlight">
-\[
-Q_t = Q_0 \cdot e^ {-\frac{t}{k}}\ . \qquad \qquad \qquad (8)
+<div class="math notranslate nohighlight" id="equation-eq2-8">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-eq2-8" title="Permalink to this equation">#</a></span>\[
+Q_t = Q_0 \cdot e^ {-\frac{t}{k}}\ .
 \]</div>
 <p>You have to program this curve yourself, but some help is available in the script.</p>
 <hr class="docutils" />
@@ -585,7 +585,7 @@ The farther from 1, the more nonlinear the catchment is.
 <hr class="docutils" />
 <p>As a first estimate, assume that the Rietholzbach catchment can be described by a linear reservoir. Use the <code class="docutils literal notranslate"><span class="pre">k</span></code> you obtained in the previous assignments to express <code class="docutils literal notranslate"><span class="pre">a_new</span></code> in the script, and fill out the correct value for <code class="docutils literal notranslate"><span class="pre">b_new</span></code> if a linear reservoir is assumed.</p>
 <hr class="docutils" />
-<p><strong>Write the expression for the sensitivity function <span class="math notranslate nohighlight">\(g\)</span> with your parameter values (use <a class="reference internal" href="#"><span class="xref myst">eq4</span></a>)</strong></p>
+<p><strong>Write the expression for the sensitivity function <span class="math notranslate nohighlight">\(g\)</span> with your parameter values (use <a class="reference internal" href="recession_intro.html#equation-eq2-4">(3.4)</a>)</strong></p>
 <details>
   <summary>Show Answer</summary>
   <span style="color:blue">
@@ -633,26 +633,26 @@ The farther from 1, the more nonlinear the catchment is.
 </section>
 <section id="differential-equation">
 <h3><span class="section-number">3.3.4.2. </span>Differential equation<a class="headerlink" href="#differential-equation" title="Permalink to this heading">#</a></h3>
-<p>As mentioned in <a class="reference internal" href="#"><span class="xref myst">eq 6</span></a>, the model equation will be solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>.  By introducing a variable <span class="math notranslate nohighlight">\(x\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-x = \ln(Q) \qquad \qquad \qquad (9)
+<p>As mentioned in <a class="reference internal" href="recession_intro.html#equation-eq2-6">(3.6)</a>, the model equation will be solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>.  By introducing a variable <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq2-9">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-eq2-9" title="Permalink to this equation">#</a></span>\[
+x = \ln(Q)
 \]</div>
-<p>you can rewrite <a class="reference internal" href="#"><span class="xref myst">eq 6</span></a> to</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}x}{\mathrm{d}t} = a \cdot (e^ x)^ {b-1} \cdot \left(\frac{P-ET}{e^ x}-1\right) \qquad \qquad \qquad (10)
+<p>you can rewrite <a class="reference internal" href="recession_intro.html#equation-eq2-6">(3.6)</a> to</p>
+<div class="math notranslate nohighlight" id="equation-eq2-10">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-eq2-10" title="Permalink to this equation">#</a></span>\[
+\frac{\mathrm{d}x}{\mathrm{d}t} = a \cdot (e^ x)^ {b-1} \cdot \left(\frac{P-ET}{e^ x}-1\right)
 \]</div>
 <p>Write a function (with name <code class="docutils literal notranslate"><span class="pre">diff_eq</span></code>) in the script which computes <span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t}\)</span> (so which returns the right-hand side of this equation) given a certain <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. Later on, you will use this function every time step, so to make clear that you want one value of <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and not the whole vector, give the arguments the names <code class="docutils literal notranslate"><span class="pre">Pi</span></code>, <code class="docutils literal notranslate"><span class="pre">ETi</span></code> and <code class="docutils literal notranslate"><span class="pre">xi</span></code> (and <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>). Note that in R, the function <code class="docutils literal notranslate"><span class="pre">log</span></code> computes the natural logarithm and <code class="docutils literal notranslate"><span class="pre">exp</span></code> the exponent.</p>
 </section>
 <section id="runge-kutta-integration-scheme">
 <h3><span class="section-number">3.3.4.3. </span>Runge-Kutta integration scheme<a class="headerlink" href="#runge-kutta-integration-scheme" title="Permalink to this heading">#</a></h3>
-<p>There are many ways to solve eq. (10) numerically. The most straightforward way is Euler forward, in which a new value of a variable (<span class="math notranslate nohighlight">\(x_{i+1}\)</span>) is computed from the old value (<span class="math notranslate nohighlight">\(x_i\)</span>) by</p>
-<div class="math notranslate nohighlight">
-\[
-x_{i+1} = x_i + a \cdot (e^{x_i})^ {b-1} \cdot \left(\frac{P_{i+1}-ET_{i+1}}{e^{x_i}}-1\right) \Delta t\ \ .  \qquad \qquad \qquad (11)
+<p>There are many ways to solve <a class="reference internal" href="#equation-eq2-10">(3.10)</a> numerically. The most straightforward way is Euler forward, in which a new value of a variable (<span class="math notranslate nohighlight">\(x_{i+1}\)</span>) is computed from the old value (<span class="math notranslate nohighlight">\(x_i\)</span>) by</p>
+<div class="math notranslate nohighlight" id="equation-eq2-11">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-eq2-11" title="Permalink to this equation">#</a></span>\[
+x_{i+1} = x_i + a \cdot (e^{x_i})^ {b-1} \cdot \left(\frac{P_{i+1}-ET_{i+1}}{e^{x_i}}-1\right) \Delta t\ \ .
 \]</div>
-<p>Because the Euler forward method is not always stable, you will use the Runge-Kutta method instead (you can also try the Euler forward method if you want). In the Runge-Kutta integration scheme, you solve this differential equation in steps. When eq. (10) is abbreviated to <span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t} = f(x(t))\)</span>, these steps are:</p>
+<p>Because the Euler forward method is not always stable, you will use the Runge-Kutta method instead (you can also try the Euler forward method if you want). In the Runge-Kutta integration scheme, you solve this differential equation in steps. When <a class="reference internal" href="#equation-eq2-10">(3.10)</a> is abbreviated to <span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t} = f(x(t))\)</span>, these steps are:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -667,7 +667,7 @@ x_{i+1} &amp;= x_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6} \qquad\qquad  \qquad\qqua
 </section>
 <section id="for-loop">
 <h3><span class="section-number">3.3.4.4. </span>For-loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
-<p>Next, make a function called \verb!run_model! with arguments <code class="docutils literal notranslate"><span class="pre">forc</span></code> (a data frame with forcing data <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span>), <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. This function consists of three parts.</p>
+<p>Next, make a function called <code class="docutils literal notranslate"><span class="pre">run_model</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">forc</span></code> (a data frame with forcing data <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span>), <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. This function consists of three parts.</p>
 <ol class="arabic simple">
 <li><p>Make an empty vector called <code class="docutils literal notranslate"><span class="pre">x</span></code>. Fill the first element of <code class="docutils literal notranslate"><span class="pre">x</span></code> using the observed ( Q ) at ( t=0 ) (this is the starting value of <code class="docutils literal notranslate"><span class="pre">x</span></code>), which you can extract automatically from the <code class="docutils literal notranslate"><span class="pre">forc</span></code> data frame.</p></li>
 <li><p>Run a for-loop over all timesteps, starting with timestep number 2 (as you already have the first one). For each step, call the function <code class="docutils literal notranslate"><span class="pre">runge_kutta</span></code> and write the result in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code>. In this way, all elements in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code> will be filled step by step.</p></li>
@@ -764,9 +764,9 @@ If discharge drops to <code class="docutils literal notranslate"><span class="pr
 </section>
 <section id="final-assignment">
 <h3><span class="section-number">3.3.4.7. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h3>
-<p>Give an estimate of the peak discharge around 7~and 8~August~2007 using the simple dynamical system approach. For this period, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span> are given, but the <span class="math notranslate nohighlight">\(Q\)</span> data are replaced with NAs. Run the model with different parameter sets to assess the effect of parameter uncertainty on the model outcomes. You are also welcome to try different initial conditions or put noise on the observed <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(ET\)</span> to simulate measurement errors.</p>
+<p>Give an estimate of the peak discharge around 7 and 8 August 2007 using the simple dynamical system approach. For this period, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(ET\)</span> are given, but the <span class="math notranslate nohighlight">\(Q\)</span> data are replaced with NAs. Run the model with different parameter sets to assess the effect of parameter uncertainty on the model outcomes. You are also welcome to try different initial conditions or put noise on the observed <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(ET\)</span> to simulate measurement errors.</p>
 <p>You can run the model for a longer period around the period with missing data. Make sure to start on a day when there was still discharge available, because otherwise the model does not have starting values (since they are derived from <span class="math notranslate nohighlight">\(Q_0\)</span>) and will not run.</p>
-<p>Cut out the discharges from 7~and 8~Aug. Make one vector of these 48~hourly values. Copy this vector to your clipboard (preprogrammed in the script) and paste it in Google Sheets before 13.00. We will discuss the results at 13:05.</p>
+<p>Cut out the discharges from 7 and 8 Aug. Make one vector of these 48~hourly values. Copy this vector to your clipboard (preprogrammed in the script) and paste it in Google Sheets before 13.00. We will discuss the results at 13:05.</p>
 <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
 </section>
 </section>
