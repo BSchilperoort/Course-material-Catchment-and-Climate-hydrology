@@ -175,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Introduction to the course “Course material Catchment and Climate hydrology”
+                    Introduction to the course “Course material Catchment and climate hydrology”
                 </a>
             </li>
         </ul>
@@ -394,8 +394,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="walrus-practical">
 <h1><span class="section-number">2.2. </span>WALRUS practical<a class="headerlink" href="#walrus-practical" title="Permalink to this heading">#</a></h1>
 <p><strong>(Wageningen Lowland Runoff Simulator)</strong> </br>
-<strong>PC practical Catchment and Climate Hydrology</strong></p>
-<p><em>Note that the answers for this practical can be found <a class="reference download internal" download="" href="../_downloads/634595c4aa66c4c3d6d6690110c411c3/lowlands_scripts_with_answers.zip"><span class="xref download myst">here</span></a>.</em></p>
+<strong>PC practical Catchment and climate hydrology</strong></p>
+<p><em>Note: The answers for this practical are available in <a class="reference download internal" download="" href="../_downloads/634595c4aa66c4c3d6d6690110c411c3/lowlands_scripts_with_answers.zip"><span class="xref download myst">here</span></a>.</em> <strong>download containing the Lowlands scripts and answers.</strong></p>
 <section id="introduction">
 <h2><span class="section-number">2.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>This practical consists of four parts:</p>
@@ -409,7 +409,7 @@ specific catchment.</p></li>
 <li><p><strong>12:30</strong>    Predict a flood peak in the Bakelse Aa catchment using your
 calibrated model (the final assignment).</p></li>
 </ul>
-<p>You don’t have to do all exercises, but make sure you start with the
+<p>You don’t have to complete all exercises, but make sure you start with the
 four parts at approximately the appointed time. For every
 section/exercise there are separate scripts in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> folder.</p>
 </section>
@@ -418,7 +418,7 @@ section/exercise there are separate scripts in the <code class="docutils literal
 <section id="install-packages">
 <h3><span class="section-number">2.2.2.1. </span>Install packages<a class="headerlink" href="#install-packages" title="Permalink to this heading">#</a></h3>
 <p>Before you can run WALRUS, you should install the <a class="reference download internal" download="" href="../_downloads/5434d7efc90cad8475fded10d3409261/lowlands_WALRUS4.zip"><span class="xref download myst">WALRUS-package</span></a> and the packages it requires. Open the script <code class="docutils literal notranslate"><span class="pre">install_WALRUS_packages.R</span></code> from the folder <code class="docutils literal notranslate"><span class="pre">scripts</span></code> in RStudio and run everything (for example by
-pressing <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+S</span></code>). Make sure you don’t get errors. Warnings are no problem.</p>
+pressing <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+S</span></code>). Ensure that no errors occur. Warnings can be ignored.</p>
 </section>
 <section id="base-script">
 <h3><span class="section-number">2.2.2.2. </span>Base script<a class="headerlink" href="#base-script" title="Permalink to this heading">#</a></h3>
@@ -435,7 +435,7 @@ the flexible time step approach. If you want to run WALRUS with a larger
 time step than the original data, you can increase <code class="docutils literal notranslate"><span class="pre">dt</span></code> (for example
 <code class="docutils literal notranslate"><span class="pre">dt=24</span></code> if you have hourly data and want to run WALRUS with a daily
 resolution).</p>
-<p>In l. 39–40 you give values for all parameters and catchment
+<p>In l. 39–40 you assign values for all parameters and catchment
 characteristics. You can supply initial values for states (i.e.
 groundwater depth – <code class="docutils literal notranslate"><span class="pre">dG0</span></code>, storage deficit – <code class="docutils literal notranslate"><span class="pre">dV0</span></code>, water level in the
 quickflow reservoir – <code class="docutils literal notranslate"><span class="pre">hQ0</span></code> and/or surface water level – <code class="docutils literal notranslate"><span class="pre">hS0</span></code>), but
@@ -458,8 +458,8 @@ useful during automatic calibration
 don’t want to lose time making figures of intermediate results. Finally,
 you can use the output as input for another model (e.g. a hydrodynamic
 model such as SOBEK).</p>
-<p>To run WALRUS with data from another catchment, with another period of
-with other parameters, you can change the belonging line in the script.
+<p>To run WALRUS with data from another catchment, with another period, or
+with other parameters, you can change the corresponding line in the script.
 After that, you have to run WALRUS again of course (l. 48). Change the
 name of the run (l. 56) and/or save the script with another name.</p>
 </section>
@@ -468,7 +468,7 @@ name of the run (l. 56) and/or save the script with another name.</p>
 <p>In this basic example, the Hupsel Brook catchment, some parameter values
 and a period of two months are selected. Look at what is plotted in the
 four panels (see Table 1 and the equations in [&#64;Brauer2014a] for an
-overview of model variables and symbols). To get a first idea of the effect of parameter values, you can change them and look at the change in the plots of the time series. Also explain the changes with the model structure and equations. See the excersies below.</p>
+overview of model variables and symbols). To get a first idea of the effect of parameter values, you can change them and look at the change in the plots of the time series. Also explain the changes with the model structure and equations. See the exercises below.</p>
 <div class="exercise admonition" id="lowlands_q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
@@ -543,7 +543,7 @@ is important that, if you change model equations, you mention clearly
 what has been changed with regard to the original code to avoid
 confusion.</p>
 <p>The scripts that are combined into the package are given in the folder
-<code class="docutils literal notranslate"><span class="pre">source_files</span></code> [or in de folder <code class="docutils literal notranslate"><span class="pre">R</span></code> on the GitHub &#64;WALRUS_GitHub]. You
+<code class="docutils literal notranslate"><span class="pre">source_files</span></code> [or in the folder <code class="docutils literal notranslate"><span class="pre">R</span></code> on the GitHub &#64;WALRUS_GitHub]. You
 can open these scripts in R. The core of the code consists of two
 scripts: <code class="docutils literal notranslate"><span class="pre">WALRUS_loop.R</span></code> contains a loop which calls the script
 <code class="docutils literal notranslate"><span class="pre">WALRUS_step.R</span></code> (which contains the model equations) during every time
@@ -560,7 +560,7 @@ function. It is possible that you need to load another package called
 </section>
 <section id="case-studies">
 <h2><span class="section-number">2.2.3. </span>Case studies<a class="headerlink" href="#case-studies" title="Permalink to this heading">#</a></h2>
-<p>Try some of the case studies below (you don’t have to do all), but make
+<p>Try some of the case studies below (you don’t need to complete all of them), but make
 sure you start with Section <a class="reference internal" href="#sec:kal"><span class="xref myst">4</span></a>{reference-type=”ref”
 reference=”sec:kal”} no later than 11:45. There is an adapted version of
 the base script for each case study (mostly preprogrammed, but sometimes
@@ -578,7 +578,7 @@ is converted to mm h<span class="math notranslate nohighlight">\(^{-1}\)</span
 193 km<span class="math notranslate nohighlight">\(^2\)</span>), similar to the conversion for discharge (<span class="math notranslate nohighlight">\(Q\)</span>). In other
 words, the water flowing into the catchment is divided over the whole
 catchment.</p>
-<p>On 27 Augustus 2010 a series of storms passed over the Netherlands and
+<p>On 27 August 2010 a series of storms passed over the Netherlands and
 Germany, leading to floods in many brooks and rivers (including the
 Hupsel Brook). The upstream part of the Berkel has also received much
 precipitation. Run the script and zoom in on the rainfall event
@@ -627,7 +627,7 @@ increase <code class="docutils literal notranslate"><span class="pre">hS0</span>
 <section id="water-level-management-polder-cabauw">
 <h3><span class="section-number">2.2.3.2. </span>Water level management - Polder Cabauw<a class="headerlink" href="#water-level-management-polder-cabauw" title="Permalink to this heading">#</a></h3>
 <p>The surface water level in Cabauw is managed by supplying water upstream
-and changing weir levels. Run the whole script to look at the output of
+and changing weir levels. Run the entire script to look at the output of
 one year. The dashed blue line in the bottom panel is the surface water
 supply.</p>
 <p>Look in the file with forcing data how information on the changes in
@@ -644,9 +644,9 @@ weir level is communicated to the model.</p>
 <span class="sd-summary-text">Answer <a class="reference internal" href="#lowlands_q8"><span class="std std-numref">Exercise 2.8</span></a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Column <span class="math notranslate nohighlight">\(hSmin\)</span> gives the distance between the channel bottom and weir level for each time step. The Q-h-relation (l. 39–51) uses that threshold in the discharge computation. You can also use this threshold to account for “dead storage” in a water course (standing water; there is water in the channel, but no discharge).</p>
 </div>
-</details><p>Between 16 Nov. 2007 and 6 May 2008 the weir at the outlet was set to
-its winter level. Zoom in to this period by adjusting the start and end
-date and run the model again. It is probably necessary to change the
+</details><p>Between 16 November. 2007 and 6 May 2008 the weir at the outlet was set to
+its winter level. Zoom in on this period by adjusting the start and end
+date and run the model again. It may be necessary to change the
 initial groundwater level (<code class="docutils literal notranslate"><span class="pre">dG0</span></code>).</p>
 <div class="exercise admonition" id="lowlands_q9">
 
@@ -666,9 +666,7 @@ happen to discharge and groundwater level when the supplied water volume
 would double or when the supply would be stopped?”.</p>
 <p>Make a copy of the forcing data frame, multiply the <code class="docutils literal notranslate"><span class="pre">fXS</span></code>-column by two
 and zero and save it with different names. Run the model with the
-different forcing and save the output with different names. For easy
-comparison, open all three written pdf figures, make them fullscreen and
-jump with <code class="docutils literal notranslate"><span class="pre">ALT+TAB</span></code> between the figures.</p>
+different forcing and save the output with different names. For easy comparison, open all three generated PDF figures, make them fullscreen, and switch between them using <code class="docutils literal notranslate"><span class="pre">ALT+TAB</span></code>.</p>
 <div class="exercise admonition" id="lowlands_q10">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.10 </span></p>
@@ -687,7 +685,7 @@ change between the scenarios?</p>
 <h3><span class="section-number">2.2.3.3. </span>Upward seepage - Polder Oude Riet<a class="headerlink" href="#upward-seepage-polder-oude-riet" title="Permalink to this heading">#</a></h3>
 <p>Upward seepage is an unknown term in many catchments, and increased by
 (naturally or anthropogenic) rise of levels outside the catchment. In
-the polder Oude Riet, seepage is a non-negligable term in the water
+the polder Oude Riet, seepage is a non-negligible term in the water
 budget.</p>
 <p>Note that the Oude Riet data are daily sums. In the Oude Riet polder,
 water is discharged by a pumping station, which causes the hourly
@@ -697,7 +695,7 @@ flux. Estimate the seepage flux by closing the water budget (assuming no
 evapotranspiration reduction and storage change over the year). Add the
 seepage flux (in mm d<span class="math notranslate nohighlight">\(^{-1}\)</span>) to the forcing data frame in R. Compute
 two scenarios: without seepage and with twice as much seepage and
-compare these to the base scenario (jump between pdfs).</p>
+compare these to the base scenario (switch between the PDFs for comparison).</p>
 <div class="exercise admonition" id="lowlands_q11">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.11 </span></p>
@@ -736,12 +734,11 @@ snow module [&#64;Wendt2015] in the Reusel catchment [calibrated by
 <p>Call the <code class="docutils literal notranslate"><span class="pre">WALRUS_snow</span></code>-function before the regular
 <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code>-function to compute snow accumulation and melt, first
 using the degree hour factor method and later using the shortwave
-radiation factor method. Look in the help-function to see which
-arguments this function requires and what output it gives. Because the
+radiation factor method. Refer to the help function to understand which arguments this function requires and what output it produces. Because the
 precipitation time series to be used as input for WALRUS has changed,
 you need to execute the preprocessing step again. Compute and plot three
 hydrographs (without snow module and with the two methods) in one
-figure. You can also compare the three saved pdf files.</p>
+figure. You can also compare the three saved PDF files.</p>
 <div class="exercise admonition" id="lowlands_q13">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.13 </span></p>
@@ -771,7 +768,7 @@ figure. You can also compare the three saved pdf files.</p>
 <h3><span class="section-number">2.2.3.5. </span>Stage-discharge relation – Hupsel Brook catchment<a class="headerlink" href="#stage-discharge-relation-hupsel-brook-catchment" title="Permalink to this heading">#</a></h3>
 <p>In some catchments, the <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation of the outlet is known. At the
 outlet of the Hupsel Brook, for example, there is a well-calibrated
-flume. You can use the rating curve belonging to this flume in stead of
+flume. You can use the rating curve belonging to this flume instead of
 the default <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation, which reduces the degree of freedom during
 calibration. It is possible, however, that the <span class="math notranslate nohighlight">\(Q\)</span>-<span class="math notranslate nohighlight">\(h\)</span>-relation at the
 outlet is not representative for the whole catchment.</p>
@@ -833,7 +830,7 @@ chosen parameter values are suitable for the catchment in question.
 Unfortunately, it is not easy to find those parameter values. For this
 exercise you will search for good parameter values for the catchment of
 the Bakelse Aa [&#64;Slenters2014]. Scripts are available for guidance.</p>
-<p>You will also use this catchment also for the final assignment. Make
+<p>You will also use this catchment for the final assignment. Make
 sure you start with the final assignment no later than 12:30.</p>
 <section id="manual-calibration">
 <h3><span class="section-number">2.2.4.1. </span>Manual calibration<a class="headerlink" href="#manual-calibration" title="Permalink to this heading">#</a></h3>
@@ -846,10 +843,11 @@ all model variables, you can steer WALRUS in the right direction.
 Sec. 7.1 of the WALRUS manual contains tips for calibration, attention
 points to and solutions for several problems. Which values did you find
 for:<br />
-<code class="docutils literal notranslate"><span class="pre">cW</span></code>: <code class="docutils literal notranslate"><span class="pre">cG</span></code>: <code class="docutils literal notranslate"><span class="pre">cQ</span></code>: You can also change the soil type (<code class="docutils literal notranslate"><span class="pre">st</span></code>), channel
+<code class="docutils literal notranslate"><span class="pre">cW</span></code>: <code class="docutils literal notranslate"><span class="pre">cG</span></code>: <code class="docutils literal notranslate"><span class="pre">cQ</span></code>?
+You can also change the soil type (<code class="docutils literal notranslate"><span class="pre">st</span></code>), channel
 depth (<code class="docutils literal notranslate"><span class="pre">cD</span></code>), fraction suface water (<code class="docutils literal notranslate"><span class="pre">aS</span></code>) or bankful discharge (<code class="docutils literal notranslate"><span class="pre">cS</span></code>).
 Usually, you base these values on catchment characterstics, but these
-estimates are uncertain. The model is usually not very sentitive to
+estimates are uncertain. The model is usually not very sensitive to
 parameter <code class="docutils literal notranslate"><span class="pre">cV</span></code>, so this parameter is fixed here.</p>
 </section>
 <section id="automatic-calibration">
@@ -960,7 +958,7 @@ and cut out the values on 18, 19 and 20 August (so 3 time series with
 72 values). Save the output to your clipboard (preprogrammed) and paste
 it in Google Sheets before 13:00. We will discuss the results at 13:05.</p>
 <p>When did the flood peak occur based on the multi-run median?<br />
-What were the 25th, 50th and 75th discharge percentile for that hour?\</p>
+What were the 25th, 50th and 75th discharge percentile for that hour?</p>
 </section>
 <section id="references">
 <h2><span class="section-number">2.2.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
