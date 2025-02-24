@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Introduction to Snow Ice &#8212; Course material Catchment and Climate hydrology</title>
+    <title>3.1. Theory recap &#8212; Course material Catchment and Climate hydrology</title>
   
   
   
@@ -61,11 +61,13 @@
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'snow ice/snow ice_intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recession/recession_theory_recap';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.1. Snow and glaciers" href="snow%20ice_slides.html" />
-    <link rel="prev" title="3.3. Recession-based models" href="../recession/recession_practical.html" />
+    <link rel="next" title="3.2. Recession-based modeling" href="recession_slides.html" />
+    <link rel="prev" title="3. Introduction to recession" href="recession_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,15 +186,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../lowlands/lowlands_practical.html">2.2. WALRUS practical</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../recession/recession_intro.html">3. Introduction to recession</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../recession/recession_theory_recap.html">3.1. Theory recap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../recession/recession_slides.html">3.2. Recession-based modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../recession/recession_practical.html">3.3. Recession-based models</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="recession_intro.html">3. Introduction to recession</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Theory recap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recession_slides.html">3.2. Recession-based modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recession_practical.html">3.3. Recession-based models</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Introduction to Snow Ice</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="snow%20ice_slides.html">4.1. Snow and glaciers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snow%20ice_practical.html">4.2. Hydrologiska Byråns Vattenbalansavdelning model (HBV) in Iceland</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../snow%20ice/snow%20ice_intro.html">4. Introduction to Snow Ice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_slides.html">4.1. Snow and glaciers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snow%20ice/snow%20ice_practical.html">4.2. Hydrologiska Byråns Vattenbalansavdelning model (HBV) in Iceland</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../soil%20moisture/soil%20moisture_intro.html">5. Introduction to Soil Moisture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -260,7 +262,7 @@
       
       
       
-      <li><a href="../_sources/snow ice/snow ice_intro.ipynb" target="_blank"
+      <li><a href="../_sources/recession/recession_theory_recap.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction to Snow Ice</h1>
+    <h1>Theory recap</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,15 +358,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-snow-ice">
-<h1><span class="section-number">4. </span>Introduction to Snow Ice<a class="headerlink" href="#introduction-to-snow-ice" title="Permalink to this heading">#</a></h1>
-<p>What to communicate here:</p>
-<ul class="simple">
-<li><p>Content of this topic by Wageningen university (for example lecture slides and practical about the programming models)</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+  <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
+<p>
+<section id="theory-recap">
+<h1><span class="section-number">3.1. </span>Theory recap<a class="headerlink" href="#theory-recap" title="Permalink to this heading">#</a></h1>
+<p>The simple dynamical system approach (Kirchner, 2009) plays a central role in this practical, and therefore the principles are repeated in this section (largely copied from Brauer et al., 2013).</p>
+<p>For the relationship between discharge (Q) and storage (S),</p>
+<div class="math notranslate nohighlight" id="equation-eq-1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-1" title="Permalink to this equation">#</a></span>\[
+  Q = f(S)
+\]</div>
+<p>it is assumed that <span class="math notranslate nohighlight">\(f\)</span> is a strictly monotonically increasing function (i.e.~no hysteresis), that all <span class="math notranslate nohighlight">\(Q\)</span> originates from storage and that flow routes (e.g. groundwater flow, macropore flow, overland flow) are only related to catchment storage and not to rainfall intensity.</p>
+<p>Under these assumptions the sensitivity of <span class="math notranslate nohighlight">\(Q\)</span> to changes in <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(f'(S)\)</span>, is expressed solely as a function of <span class="math notranslate nohighlight">\(Q\)</span> through the so-called discharge sensitivity function <span class="math notranslate nohighlight">\(g(Q)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-2" title="Permalink to this equation">#</a></span>\[
+ g(Q) = \frac{\mathrm{d}Q}{\mathrm{d}S}\ 
+\]</div>
+<p>This function expresses how sensitive discharge is to changes in catchment storage, or how much discharge will change when storage changes. When the numerator and denominator of the right-hand side are both divided by <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{d}S/\mathrm{d}t\)</span> is replaced with the other terms of the water budget equation (<span class="math notranslate nohighlight">\(P - ET - Q\)</span>), the change of discharge over time can be computed as</p>
+<div class="math notranslate nohighlight" id="equation-eq2-3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-eq2-3" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q)~(P-ET-Q)\ 
+\]</div>
+<p>This implies that at a given <em>initial storage</em>, a certain change in storage (caused by <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(ET\)</span> or <span class="math notranslate nohighlight">\(Q\)</span>) should always lead to the same discharge response, both in timing and magnitude.</p>
+<p>When <span class="math notranslate nohighlight">\(P=0\)</span> and <span class="math notranslate nohighlight">\(ET=0\)</span> (for instance during night-time hours), the sensitivity function <span class="math notranslate nohighlight">\(g(Q)\)</span> can be obtained from data by plotting the recession rate <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> against <span class="math notranslate nohighlight">\(Q\)</span>. In several studies power law relations between <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(-\mathrm{d}Q/\mathrm{d}t\)</span> have been found (e.g. Brutsaert and Nieber, 1977):</p>
+<div class="math notranslate nohighlight" id="equation-eq2-4">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-eq2-4" title="Permalink to this equation">#</a></span>\[
+ -\frac{\mathrm{d}Q}{\mathrm{d}t} = g(Q) \cdot Q = a \cdot Q^{b} \ ,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(b=1\)</span> corresponds to a linear reservoir. In case of a linear reservoir, the coefficient <span class="math notranslate nohighlight">\(a\)</span> is often replaced by <span class="math notranslate nohighlight">\(1/k\)</span>. In this practical we will use the letters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for nonlinear reservoirs and <span class="math notranslate nohighlight">\(k\)</span> for linear reservoirs. To obtain recession coefficients <span class="math notranslate nohighlight">\(a\)</span> (or <span class="math notranslate nohighlight">\(k\)</span>) and <span class="math notranslate nohighlight">\(b\)</span>, you will use three techniques: two types of recession analysis <a class="reference internal" href="recession_practical.html#recession-analysis"><span class="std std-ref">Sec. 3.3.2</span></a> and hydrograph fitting <a class="reference internal" href="recession_practical.html#rainfall-runoff-modelling"><span class="std std-ref">Sec. 3.3.4</span></a>.</p>
+<p>To simulate the streamflow hydrograph, substitute <span class="math notranslate nohighlight">\(g(Q)\)</span> from <a class="reference internal" href="#equation-eq2-4">(3.4)</a> (<span class="math notranslate nohighlight">\(a  Q^{b-1}\)</span>) in <a class="reference internal" href="#equation-eq2-3">(3.3)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq2-5">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-eq2-5" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}Q}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot ( P-ET-Q )\ . 
+\]</div>
+<p>Because this equation can lead to numerical instabilities when integrated, <a class="reference internal" href="#equation-eq2-5">(3.5)</a> is solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq2-6">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-eq2-6" title="Permalink to this equation">#</a></span>\[
+ \frac{\mathrm{d}(\ln Q)}{\mathrm{d}t} = a \cdot Q^{b-1}  \cdot  \left(\frac{P-ET}{Q}-1 \right)\ 
+\]</div>
+</ol>
+</p>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -379,7 +413,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./snow ice"
+            path: "./recession"
         },
         predefinedOutput: true
     }
@@ -397,20 +431,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../recession/recession_practical.html"
+       href="recession_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Recession-based models</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Introduction to recession</p>
       </div>
     </a>
     <a class="right-next"
-       href="snow%20ice_slides.html"
+       href="recession_slides.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>Snow and glaciers</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Recession-based modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

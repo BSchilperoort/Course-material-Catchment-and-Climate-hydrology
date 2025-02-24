@@ -187,6 +187,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="recession_intro.html">3. Introduction to recession</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recession_theory_recap.html">3.1. Theory recap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recession_slides.html">3.2. Recession-based modeling</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Recession-based models</a></li>
 </ul>
@@ -202,8 +203,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../topography/topography_intro.html">6. Introduction to Topography</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../topography/topography_slides.html">6.2. Topography-based modeling: TOPMODEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topography/topography_practical.html">6.3. Topography based models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_slides.html">6.1. Topography-based modeling: TOPMODEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topography/topography_practical.html">6.2. Topography based models</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../synthesis%20assignment/synthesis%20assignment_intro.html">7. Introduction Synthesis assignment</a></li>
@@ -585,7 +586,7 @@ The farther from 1, the more nonlinear the catchment is.
 <hr class="docutils" />
 <p>As a first estimate, assume that the Rietholzbach catchment can be described by a linear reservoir. Use the <code class="docutils literal notranslate"><span class="pre">k</span></code> you obtained in the previous assignments to express <code class="docutils literal notranslate"><span class="pre">a_new</span></code> in the script, and fill out the correct value for <code class="docutils literal notranslate"><span class="pre">b_new</span></code> if a linear reservoir is assumed.</p>
 <hr class="docutils" />
-<p><strong>Write the expression for the sensitivity function <span class="math notranslate nohighlight">\(g\)</span> with your parameter values (use <a class="reference internal" href="recession_intro.html#equation-eq2-4">(3.4)</a>)</strong></p>
+<p><strong>Write the expression for the sensitivity function <span class="math notranslate nohighlight">\(g\)</span> with your parameter values (use <a class="reference internal" href="recession_theory_recap.html#equation-eq2-4">(3.4)</a>)</strong></p>
 <details>
   <summary>Show Answer</summary>
   <span style="color:blue">
@@ -633,12 +634,12 @@ The farther from 1, the more nonlinear the catchment is.
 </section>
 <section id="differential-equation">
 <h3><span class="section-number">3.3.4.2. </span>Differential equation<a class="headerlink" href="#differential-equation" title="Permalink to this heading">#</a></h3>
-<p>As mentioned in <a class="reference internal" href="recession_intro.html#equation-eq2-6">(3.6)</a>, the model equation will be solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>.  By introducing a variable <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<p>As mentioned in <a class="reference internal" href="recession_theory_recap.html#equation-eq2-6">(3.6)</a>, the model equation will be solved in terms of the logarithm of <span class="math notranslate nohighlight">\(Q\)</span>.  By introducing a variable <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-eq2-9">
 <span class="eqno">(3.9)<a class="headerlink" href="#equation-eq2-9" title="Permalink to this equation">#</a></span>\[
 x = \ln(Q)
 \]</div>
-<p>you can rewrite <a class="reference internal" href="recession_intro.html#equation-eq2-6">(3.6)</a> to</p>
+<p>you can rewrite <a class="reference internal" href="recession_theory_recap.html#equation-eq2-6">(3.6)</a> to</p>
 <div class="math notranslate nohighlight" id="equation-eq2-10">
 <span class="eqno">(3.10)<a class="headerlink" href="#equation-eq2-10" title="Permalink to this equation">#</a></span>\[
 \frac{\mathrm{d}x}{\mathrm{d}t} = a \cdot (e^ x)^ {b-1} \cdot \left(\frac{P-ET}{e^ x}-1\right)

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.3. Topography based models &#8212; Course material Catchment and Climate hydrology</title>
+    <title>6.2. Topography based models &#8212; Course material Catchment and Climate hydrology</title>
   
   
   
@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Introduction Synthesis assignment" href="../synthesis%20assignment/synthesis%20assignment_intro.html" />
-    <link rel="prev" title="6.2. Topography-based modeling: TOPMODEL" href="topography_slides.html" />
+    <link rel="prev" title="6.1. Topography-based modeling: TOPMODEL" href="topography_slides.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,6 +187,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../recession/recession_intro.html">3. Introduction to recession</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recession/recession_theory_recap.html">3.1. Theory recap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../recession/recession_slides.html">3.2. Recession-based modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../recession/recession_practical.html">3.3. Recession-based models</a></li>
 </ul>
@@ -202,8 +203,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="topography_intro.html">6. Introduction to Topography</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="topography_slides.html">6.2. Topography-based modeling: TOPMODEL</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Topography based models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topography_slides.html">6.1. Topography-based modeling: TOPMODEL</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Topography based models</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../synthesis%20assignment/synthesis%20assignment_intro.html">7. Introduction Synthesis assignment</a></li>
@@ -355,41 +356,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.3.1. The Ourthe catchment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.3.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.3.2.1. DEM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.3.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.2.1. The Ourthe catchment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.2.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.2.2.1. DEM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.2.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-pit-filling">Sink / pit filling</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-direction-slope-and-contributing-area">Flow direction, slope and contributing area</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.2.2.3. R for DEM analyses</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.3.3. DEM analyses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.3.3.1. Read data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.3.3.2. Channel network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.3.3.3. Channel network ordering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.3.3.4. Drainage density and hillslope length</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.3.3.5. Distance to outlet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.3.3.6. Channel width function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.3.3.7. Channel travel time distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.2.3. DEM analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.2.3.1. Read data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.2.3.2. Channel network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.2.3.3. Channel network ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.2.3.4. Drainage density and hillslope length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.2.3.5. Distance to outlet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.2.3.6. Channel width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.2.3.7. Channel travel time distribution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.3.4.1. Time series</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.3.4.2. Channel travel time distribution model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.3.4.3. Hillslope width function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.3.4.4. Channel and hillslope travel time distribution model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.3.4.5. Flow routes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.2.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.2.4.1. Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.2.4.2. Channel travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.2.4.3. Hillslope width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.2.4.4. Channel and hillslope travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.2.4.5. Flow routes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.3.5. TOPMODEL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.3.5.1. Topographic index</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.3.5.2. Running TOPMODEL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.3.5.3. Effect of parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.3.5.4. Effect of initial conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.3.5.5. Final assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.2.5. TOPMODEL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.2.5.1. Topographic index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.2.5.2. Running TOPMODEL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.2.5.3. Effect of parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.2.5.4. Effect of initial conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.2.5.5. Final assignment</a></li>
 </ul>
 </li>
 </ul>
@@ -405,18 +406,18 @@ document.write(`
                   
   <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
 <section class="tex2jax_ignore mathjax_ignore" id="topography-based-models">
-<h1><span class="section-number">6.3. </span>Topography based models<a class="headerlink" href="#topography-based-models" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6.2. </span>Topography based models<a class="headerlink" href="#topography-based-models" title="Permalink to this heading">#</a></h1>
 <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
 <section id="the-ourthe-catchment">
-<h2><span class="section-number">6.3.1. </span>The Ourthe catchment<a class="headerlink" href="#the-ourthe-catchment" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2.1. </span>The Ourthe catchment<a class="headerlink" href="#the-ourthe-catchment" title="Permalink to this heading">#</a></h2>
 <p>We will focus specifically on the catchment of the Ourthe upstream of Tabreux (1600 km<sup>2</sup>). Both topography and geomorphology play an important role in the hydrological response of the Upper Ourthe catchment. The catchment is situated in the hilly plateaus of the Ardennes in the eastern part of Belgium “a well-known area for those who followed Hydrogeology” (Figure 1). The elevation of the catchment varies between 150 and 650 m above sea level. The soil mainly consists of sandstone, shale and limestone, which have been eroded by small river systems that drain into the river Meuse. The region can be characterized as mostly rain-fed with some snow during the winter period. This results in a highly variable runoff regime with low discharges in summer and high peaks in winter.</p>
 <div style="background-color; color: black; width:95%; vertical-align: middle; padding:15px; margin: 10px; border-radius: 10px">
 </section>
 <section id="digital-elevation-models-for-hydrological-applications">
-<h2><span class="section-number">6.3.2. </span>Digital elevation models for hydrological applications<a class="headerlink" href="#digital-elevation-models-for-hydrological-applications" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2.2. </span>Digital elevation models for hydrological applications<a class="headerlink" href="#digital-elevation-models-for-hydrological-applications" title="Permalink to this heading">#</a></h2>
 <p>The data and scripts can be found <a class="reference download internal" download="" href="../_downloads/56432356bd18f488baf575f140d9439d/CCH_pc_prac_4.zip"><span class="xref download myst">here</span></a>. Download and unzip. This will generate the folder <code class="docutils literal notranslate"><span class="pre">topmodels</span></code>, containing the subdirectories <code class="docutils literal notranslate"><span class="pre">R_scripts</span></code>, <code class="docutils literal notranslate"><span class="pre">DEM</span></code> and <code class="docutils literal notranslate"><span class="pre">Data</span></code>.</p>
 <section id="dem">
-<h3><span class="section-number">6.3.2.1. </span>DEM<a class="headerlink" href="#dem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2.1. </span>DEM<a class="headerlink" href="#dem" title="Permalink to this heading">#</a></h3>
 <p>The DEM you will use today was obtained by the Shuttle Radar Topography Mission (SRTM) which generated a near global elevation map. For Europe the resolution of this dataset is about 90 meter and can be downloaded from the internet (<a class="reference external" href="http://www2.jpl.nasa.gov/srtm/">http://www2.jpl.nasa.gov/srtm/</a>). Your DEM file is called <code class="docutils literal notranslate"><span class="pre">ourthe_90m.asc</span></code> and is located in the folder <code class="docutils literal notranslate"><span class="pre">DEM</span></code>.</p>
 <figure class="align-center" id="topomap">
 <a class="reference internal image-reference" href="../_images/topomap.png"><img alt="../_images/topomap.png" src="../_images/topomap.png" style="width: 70%;" /></a>
@@ -435,7 +436,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="preprocessing">
-<h3><span class="section-number">6.3.2.2. </span>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2.2. </span>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h3>
 <p>Before you can use the DEM for hydrological applications, the DEM has to be preprocessed. In this preprocessing step, pits in the topography field are filled, flow directions are computed and contributing areas and slope gradients are computed.</p>
 <p>For this preprocessing, multiple GIS programs can be used (e.g. ArcGIS, SAGA GIS, GRASS). For this practical these preprocessing steps have already been performed using the TAUDEM package. TAUDEM is a terrain analysis package for ArcGIS developed by D.G. Tarboton of Utah State University. For more information concerning the specific aspects of TAUDEM, see <em><a class="reference external" href="http://hydrology.usu.edu/taudem/taudem5.0/">http://hydrology.usu.edu/taudem/taudem5.0/</a></em> <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. The following sections explain what happens during the preprocessing phase.</p>
 <section id="sink-pit-filling">
@@ -460,7 +461,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="r-for-dem-analyses">
-<h3><span class="section-number">6.3.2.3. </span>R for DEM analyses<a class="headerlink" href="#r-for-dem-analyses" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2.3. </span>R for DEM analyses<a class="headerlink" href="#r-for-dem-analyses" title="Permalink to this heading">#</a></h3>
 <p>After these preprocessing steps, R can be used for spatial hydrological analyses. Open RStudio and load the script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code>. Set the working directory and run the part under <code class="docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">started</span></code>.</p>
 <p>The folder <code class="docutils literal notranslate"><span class="pre">R_scripts</span></code> contains more scripts with functions used in the main R script <code class="docutils literal notranslate"><span class="pre">topmodels.R</span></code> (you don’t have to open these scripts now):</p>
 <ul class="simple">
@@ -483,9 +484,9 @@ document.write(`
 </section>
 </section>
 <section id="dem-analyses">
-<h2><span class="section-number">6.3.3. </span>DEM analyses<a class="headerlink" href="#dem-analyses" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2.3. </span>DEM analyses<a class="headerlink" href="#dem-analyses" title="Permalink to this heading">#</a></h2>
 <section id="read-data">
-<h3><span class="section-number">6.3.3.1. </span>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.1. </span>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">#</a></h3>
 <p>Next, run the part of the script under “Read Data”. This part of the script generates a map with the pit filled DEM. Check if your figure is similar to Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">topomape</span></code>.</p>
 <p>Read the part of the script under “Catchment Area”. If you run this part in R, only the part of the DEM that lies upstream of Tabreux is selected. This part belongs to the Upper Ourthe catchment.</p>
 <hr class="docutils" />
@@ -511,7 +512,7 @@ FALSE: Outside the catchment.
 </section>
 <hr class="docutils" />
 <section id="channel-network">
-<h3><span class="section-number">6.3.3.2. </span>Channel network<a class="headerlink" href="#channel-network" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.2. </span>Channel network<a class="headerlink" href="#channel-network" title="Permalink to this heading">#</a></h3>
 <p>Because you do not have information on where the channels are (which is almost always the case), you will predict the location of the channels with the DEM. Assume that a river branch will develop when the upstream area exceeds a certain value representing the soil’s flow capacity; excess water will start to flow overland instead, creating a channel. Assume that for a pixel to be part of the channel network, the upstream area has to be equal to or exceed 0.1~<span class="math notranslate nohighlight">\(\text{km}^2\)</span> (<span class="math notranslate nohighlight">\(A_c\)</span>).</p>
 <p>Run the part of the script under “Channel Network”. This will generate the channel network. Click on “Channel” in the workspace window to see what this matrix looks like.</p>
 <hr class="docutils" />
@@ -522,7 +523,7 @@ FALSE: Outside the catchment.
 <p>29177</p>
   </span>
 </details>
-<p>\How many pixels are part of the network when you change the upstream area to 0.03, 0.3 and 1 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>.</p>
+<p>How many pixels are part of the network when you change the upstream area to 0.03, 0.3 and 1 <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>.</p>
 <details>
   <summary>Show Answer</summary>
   <span style="color:blue">
@@ -546,7 +547,7 @@ FALSE: Outside the catchment.
 </section>
 <hr class="docutils" />
 <section id="channel-network-ordering">
-<h3><span class="section-number">6.3.3.3. </span>Channel network ordering<a class="headerlink" href="#channel-network-ordering" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.3. </span>Channel network ordering<a class="headerlink" href="#channel-network-ordering" title="Permalink to this heading">#</a></h3>
 <p>The shape of channel network can be analyzed with several ordering systems. Today we will focus on the Strahler (left) and Shreve (right) ordering systems:</p>
 <figure class="align-center" id="shreve">
 <a class="reference internal image-reference" href="../_images/Shreve.png"><img alt="../_images/Shreve.png" src="../_images/Shreve.png" style="width: 70%;" /></a>
@@ -593,7 +594,7 @@ because there will be fewer branches.</p>
 </details>
 </section>
 <section id="drainage-density-and-hillslope-length">
-<h3><span class="section-number">6.3.3.4. </span>Drainage density and hillslope length<a class="headerlink" href="#drainage-density-and-hillslope-length" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.4. </span>Drainage density and hillslope length<a class="headerlink" href="#drainage-density-and-hillslope-length" title="Permalink to this heading">#</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">channelpixelsize</span></code> calculates for every channel pixel how many metres of channel it contains.</p>
 <hr class="docutils" />
 <p>Click on <code class="docutils literal notranslate"><span class="pre">Channel_Length_Per_Pixel</span></code> in the workspace window. What do NA, 90 and 127 tell you about the flow direction?</p>
@@ -669,7 +670,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="distance-to-outlet">
-<h3><span class="section-number">6.3.3.5. </span>Distance to outlet<a class="headerlink" href="#distance-to-outlet" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.5. </span>Distance to outlet<a class="headerlink" href="#distance-to-outlet" title="Permalink to this heading">#</a></h3>
 <p>Compute for each pixel the distance to the outlet. This is preprogrammed in <code class="docutils literal notranslate"><span class="pre">channeldistance</span></code>.</p>
 <hr class="docutils" />
 <p>What is the distance from the most upstream channel pixel to the outlet?</p>
@@ -708,7 +709,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="channel-width-function">
-<h3><span class="section-number">6.3.3.6. </span>Channel width function<a class="headerlink" href="#channel-width-function" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.6. </span>Channel width function<a class="headerlink" href="#channel-width-function" title="Permalink to this heading">#</a></h3>
 <p>From the channel network you can compute the network width function. This function gives the fraction of channel pixels at a given distance from the outlet. Plot the width function.</p>
 <hr class="docutils" />
 <p>Explain the shape of the width function with the shapes of the channel network and catchment.</p>
@@ -724,7 +725,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="channel-travel-time-distribution">
-<h3><span class="section-number">6.3.3.7. </span>Channel travel time distribution<a class="headerlink" href="#channel-travel-time-distribution" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3.7. </span>Channel travel time distribution<a class="headerlink" href="#channel-travel-time-distribution" title="Permalink to this heading">#</a></h3>
 <p>The velocity of the water in the river is generally between 0.3 and 3.0 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>. Here a value of 0.8 m <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span> is assumed for every stretch of river. With the flow velocity you can convert the distance-to-outlet-map into a channel travel time map.</p>
 <hr class="docutils" />
 <p>What can you say about the pattern and variability in flow times and their relation to the shape of the catchment and the channel network?</p>
@@ -759,9 +760,9 @@ because there will be fewer branches.</p>
 </section>
 </section>
 <section id="rainfall-runoff-modelling">
-<h2><span class="section-number">6.3.4. </span>Rainfall-runoff modelling<a class="headerlink" href="#rainfall-runoff-modelling" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2.4. </span>Rainfall-runoff modelling<a class="headerlink" href="#rainfall-runoff-modelling" title="Permalink to this heading">#</a></h2>
 <section id="time-series">
-<h3><span class="section-number">6.3.4.1. </span>Time series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4.1. </span>Time series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h3>
 <p>Before you start modelling, you should get a better feeling of the water balance terms in the Ourthe catchment. The file <code class="docutils literal notranslate"><span class="pre">PEQ_Ourthe_2002_2003.txt</span></code> in the folder <code class="docutils literal notranslate"><span class="pre">Data</span></code> contains 2 years of basin averaged hourly precipitation [<span class="math notranslate nohighlight">\(mm\)</span> <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span> ], potential evaporation [<span class="math notranslate nohighlight">\(mm\)</span> <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span>] and discharge [<span class="math notranslate nohighlight">\(\mathrm{m}^{3}\)</span> <span class="math notranslate nohighlight">\(\mathrm{s}^{-1}\)</span>] data. Use the year 2002 for calibration and Feb.-Dec. 2003 for validation. The discharge data of January 2003 are removed - you will predict these in the final assignment.</p>
 <p>Comparing fluxes is easier when they have the same units. Use the catchment area to convert the discharge to mm <span class="math notranslate nohighlight">\(\mathrm{h}^{-1}\)</span> and plot the time series. To remove the hourly variability, the data can be averaged over monthly periods. This is preprogrammed in the script. In addition, the <span class="math notranslate nohighlight">\(\mathrm{10}^{th}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{90}^{th}\)</span> percentiles are computed.</p>
 <hr class="docutils" />
@@ -784,7 +785,7 @@ because there will be fewer branches.</p>
 \]</div>
 </section>
 <section id="channel-travel-time-distribution-model">
-<h3><span class="section-number">6.3.4.2. </span>Channel travel time distribution model<a class="headerlink" href="#channel-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4.2. </span>Channel travel time distribution model<a class="headerlink" href="#channel-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
 <p>From the channel width function in <a class="reference internal" href="#channel-width-function"><span class="xref myst">section 6.3.3.6</span></a> you can make a simple rainfall-runoff model. In this model you assume that all precipitation enters the channel network directly.</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">Q_geomorph_channel</span></code> converts the width function to a travel time distribution model with a convolution integral. Try to understand the different aspects of this function (look in the file <code class="docutils literal notranslate"><span class="pre">Q_geomorph_channel.R</span></code>).</p>
 <hr class="docutils" />
@@ -801,7 +802,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="hillslope-width-function">
-<h3><span class="section-number">6.3.4.3. </span>Hillslope width function<a class="headerlink" href="#hillslope-width-function" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4.3. </span>Hillslope width function<a class="headerlink" href="#hillslope-width-function" title="Permalink to this heading">#</a></h3>
 <p>Of course, the assumption that all precipitation immediately enters the channel network is not valid: the simulated discharge response is too fast. This illustrates that the response of a catchment is not only characterized by the channel network but also by the soil, slope and vegetation on the hillslopes.</p>
 <hr class="docutils" />
 <p>Compute for each pixel the distance to the nearest channel, plot the map and make a histogram: the hillslope width function.</p>
@@ -840,7 +841,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="channel-and-hillslope-travel-time-distribution-model">
-<h3><span class="section-number">6.3.4.4. </span>Channel and hillslope travel time distribution model<a class="headerlink" href="#channel-and-hillslope-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4.4. </span>Channel and hillslope travel time distribution model<a class="headerlink" href="#channel-and-hillslope-travel-time-distribution-model" title="Permalink to this heading">#</a></h3>
 <p>A catchment’s travel time distribution is determined by the time a water droplet spends in both the hillslope and the channel network. You already computed the channel travel time distribution from the channel width function (<a class="reference internal" href="#channel-travel-time-distribution-model"><span class="xref myst">Section 6.3.4.2</span></a>). In the same way, you can make a hillslope travel time distribution from the histogram of the distances to the nearest channel. Just as in the channel, we assume that the flow velocity in the hillslope is constant.</p>
 <hr class="docutils" />
 <p>Why is the assumption of a constant (no variation in time) flow velocity in the hillslope not realistic?</p>
@@ -891,7 +892,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="flow-routes">
-<h3><span class="section-number">6.3.4.5. </span>Flow routes<a class="headerlink" href="#flow-routes" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4.5. </span>Flow routes<a class="headerlink" href="#flow-routes" title="Permalink to this heading">#</a></h3>
 <p>The route a water droplet takes through the hillslope to the channel depends on many factors, such as soil type, presence of macropores, vegetation and catchment wetness. Because many of these factors change during the year, the flow routes change, and therefore the travel times change.</p>
 <p>Make the model a bit more complex by assuming that the hillslope can be modelled with three different hillslope velocity values, <span class="math notranslate nohighlight">\(v=10^{-3}\)</span>, <span class="math notranslate nohighlight">\(v=10^{-5}\)</span> and <span class="math notranslate nohighlight">\(v=10^{-7}~\mathrm{m\,s^{-1}}\)</span>, indicating the fast, intermediate and slow hillslope response. Run the model with the defined fractions for fast, medium and slow response velocities.</p>
 <hr class="docutils" />
@@ -917,11 +918,11 @@ because there will be fewer branches.</p>
 </section>
 </section>
 <section id="topmodel">
-<h2><span class="section-number">6.3.5. </span>TOPMODEL<a class="headerlink" href="#topmodel" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2.5. </span>TOPMODEL<a class="headerlink" href="#topmodel" title="Permalink to this heading">#</a></h2>
 <p>As you probably noticed, the simple model was only able to simulate a proper response behaviour for some events. It is very difficult to simulate the hydrological response of a catchment with a few fixed velocities. It is impossible to grasp the temporal variations in the complex hydrological interactions between vegetation and the unsaturated and saturated zones using this simple approach.</p>
 <p>The next step is to use a more complex (but still relatively simple) hydrological model: TOPMODEL. TOPMODEL is a well-known model based on the topographic properties of the catchment.</p>
 <section id="topographic-index">
-<h3><span class="section-number">6.3.5.1. </span>Topographic index<a class="headerlink" href="#topographic-index" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5.1. </span>Topographic index<a class="headerlink" href="#topographic-index" title="Permalink to this heading">#</a></h3>
 <p>The main assumption behind TOPMODEL is that the response behaviour of a given pixel can be estimated by its topographic index value <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-equation3">
 <span class="eqno">(6.3)<a class="headerlink" href="#equation-equation3" title="Permalink to this equation">#</a></span>\[
@@ -943,7 +944,7 @@ because there will be fewer branches.</p>
 </section>
 <hr class="docutils" />
 <section id="running-topmodel">
-<h3><span class="section-number">6.3.5.2. </span>Running TOPMODEL<a class="headerlink" href="#running-topmodel" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5.2. </span>Running TOPMODEL<a class="headerlink" href="#running-topmodel" title="Permalink to this heading">#</a></h3>
 <p>To run TOPMODEL, you need to specify 5 parameters and 2 initial conditions.
 TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter sets are given in <code class="docutils literal notranslate"><span class="pre">TOPMODEL_Parameters.dat</span></code>. The initial conditions are the unsaturated zone deficit (<code class="docutils literal notranslate"><span class="pre">Dbar</span></code>) and  root zone deficit (<code class="docutils literal notranslate"><span class="pre">Drzone</span></code>), both effective catchment values.</p>
 <p>First, use only the first parameter set (first row in <code class="docutils literal notranslate"><span class="pre">TOPMODEL_Parameters.dat</span></code>). Run TOPMODEL and simulate the discharge response. Choose the period yourself.</p>
@@ -958,7 +959,7 @@ TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter s
 </section>
 <hr class="docutils" />
 <section id="effect-of-parameters">
-<h3><span class="section-number">6.3.5.3. </span>Effect of parameters<a class="headerlink" href="#effect-of-parameters" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5.3. </span>Effect of parameters<a class="headerlink" href="#effect-of-parameters" title="Permalink to this heading">#</a></h3>
 <p>To analyze the effect of uncertainty in the parameter values, run the model with all 20 parameter sets and make an ensemble of the simulations. This may take a few minutes.</p>
 <hr class="docutils" />
 <p>When is the parameter uncertainty large? In other words, when is the spread of the grey lines, caused by different parameter sets, large?</p>
@@ -974,7 +975,7 @@ TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter s
 </section>
 <hr class="docutils" />
 <section id="effect-of-initial-conditions">
-<h3><span class="section-number">6.3.5.4. </span>Effect of initial conditions<a class="headerlink" href="#effect-of-initial-conditions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5.4. </span>Effect of initial conditions<a class="headerlink" href="#effect-of-initial-conditions" title="Permalink to this heading">#</a></h3>
 <p>The results show that it is especially difficult to simulate the response of the Ourthe for the first main runoff peak in November 2002. This is caused by a wrong estimation of the initial storage, given by <code class="docutils literal notranslate"><span class="pre">Dbar</span></code> and <code class="docutils literal notranslate"><span class="pre">Drzone</span></code></p>
 <p>Change the values of <code class="docutils literal notranslate"><span class="pre">Dbar</span></code> and <code class="docutils literal notranslate"><span class="pre">Drzone</span></code> and run the model again.</p>
 <hr class="docutils" />
@@ -1018,7 +1019,7 @@ TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter s
 </section>
 <hr class="docutils" />
 <section id="final-assignment">
-<h3><span class="section-number">6.3.5.5. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5.5. </span>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this heading">#</a></h3>
 <p>Predict the discharge peak in January 2003 using TOPMODEL. Run TOPMODEL with different settings. You can change (1) the warming-up period, (2) parameter sets and (3) initial conditions. Collect the computed discharge from different runs as columns in a matrix to get an ensemble of forecasts, which you can plot and analyse. Follow the instructions in the script.</p>
 <p>Compute the 25th, 50th and 75th percentile of the ensemble and cut out the values of January (so 3 time series with 744 values). Save the output as a CSV file in your working directory. Open the file in Excel, copy and paste it in Google Sheets before 13:00. We will discuss the results at 13:05.</p>
 </section>
@@ -1061,7 +1062,7 @@ TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter s
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Topography-based modeling: TOPMODEL</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>Topography-based modeling: TOPMODEL</p>
       </div>
     </a>
     <a class="right-next"
@@ -1089,41 +1090,41 @@ TOPMODEL has already been calibrated for the Ourthe catchment and 20 parameter s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.3.1. The Ourthe catchment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.3.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.3.2.1. DEM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.3.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ourthe-catchment">6.2.1. The Ourthe catchment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-elevation-models-for-hydrological-applications">6.2.2. Digital elevation models for hydrological applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dem">6.2.2.1. DEM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">6.2.2.2. Preprocessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-pit-filling">Sink / pit filling</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-direction-slope-and-contributing-area">Flow direction, slope and contributing area</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.3.2.3. R for DEM analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-dem-analyses">6.2.2.3. R for DEM analyses</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.3.3. DEM analyses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.3.3.1. Read data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.3.3.2. Channel network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.3.3.3. Channel network ordering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.3.3.4. Drainage density and hillslope length</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.3.3.5. Distance to outlet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.3.3.6. Channel width function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.3.3.7. Channel travel time distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dem-analyses">6.2.3. DEM analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">6.2.3.1. Read data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network">6.2.3.2. Channel network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-network-ordering">6.2.3.3. Channel network ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drainage-density-and-hillslope-length">6.2.3.4. Drainage density and hillslope length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-outlet">6.2.3.5. Distance to outlet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-width-function">6.2.3.6. Channel width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution">6.2.3.7. Channel travel time distribution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.3.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.3.4.1. Time series</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.3.4.2. Channel travel time distribution model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.3.4.3. Hillslope width function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.3.4.4. Channel and hillslope travel time distribution model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.3.4.5. Flow routes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rainfall-runoff-modelling">6.2.4. Rainfall-runoff modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">6.2.4.1. Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-travel-time-distribution-model">6.2.4.2. Channel travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hillslope-width-function">6.2.4.3. Hillslope width function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-and-hillslope-travel-time-distribution-model">6.2.4.4. Channel and hillslope travel time distribution model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-routes">6.2.4.5. Flow routes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.3.5. TOPMODEL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.3.5.1. Topographic index</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.3.5.2. Running TOPMODEL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.3.5.3. Effect of parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.3.5.4. Effect of initial conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.3.5.5. Final assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topmodel">6.2.5. TOPMODEL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topographic-index">6.2.5.1. Topographic index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-topmodel">6.2.5.2. Running TOPMODEL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-parameters">6.2.5.3. Effect of parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-initial-conditions">6.2.5.4. Effect of initial conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment">6.2.5.5. Final assignment</a></li>
 </ul>
 </li>
 </ul>
